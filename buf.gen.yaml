@@ -1,0 +1,10 @@
+# Buf codegen config for Connect-ES (v2).
+# protoc-gen-es v2 emits both message types AND service clients into *_pb.ts.
+# Run with:  npm run proto:generate   (see package.json — set PROTO_SRC to your .proto dir)
+version: v2
+plugins:
+  - local: protoc-gen-es
+    out: src/app/gen
+    opt:
+      - target=ts        # emit .ts (not .d.ts + .js)
+      - import_extension=js

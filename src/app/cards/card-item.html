@@ -1,0 +1,8 @@
+<div class="card-hover">
+  @if(card().imageUrl){
+  <img [ngSrc]="card().imageUrl" [alt]="card().name" width="244" height="340" />
+  }
+  <div>
+    <span class="qty-badge"># Owned - {{card().count}}</span>
+  </div>
+</div>

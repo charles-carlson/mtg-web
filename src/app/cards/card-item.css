@@ -1,0 +1,29 @@
+img {
+  width: 100%; /* fill the grid cell */
+  height: auto; /* keep aspect ratio */
+  display: block;
+}
+.card-hover {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 16px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  transition: 0.35s;
+}
+.card-hover:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+}
+.qty-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.72);
+  color: #fff;
+  font: 600 0.78rem/1 system-ui; /* weight / size / line-height */
+  backdrop-filter: blur(4px);
+}
