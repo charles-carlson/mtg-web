@@ -4,6 +4,7 @@ img {
   display: block;
 }
 .card-hover {
+  position: relative;
   box-sizing: border-box;
   width: 100%;
   padding: 16px;

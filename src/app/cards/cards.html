@@ -1,13 +1,14 @@
 <section style="padding: 2rem; font-family: system-ui">
   <h2>Cards</h2>
-  <button (click)="load()">Reload</button>
+  <button (click)="cardsResource.reload()">Reload</button>
   <div class="card-grid">
-    @if (error()) {
-    <p style="color: #c00">gRPC error: {{ error() }}</p>
-    } @else if (loading()) {
+    @if (cardsResource.error()) {
+    <p style="color: #c00">gRPC error: {{ cardsResource.error() }}</p>
+    } @else if (cardsResource.isLoading()) {
     <p>Loading…</p>
-    } @else { @for (c of cards(); track c.name + c.set + c.number) {
+    } @else { @if(cardsResource.hasValue()){ @for (c of cardsResource.value() ?? []; track c.name +
+    c.set + c.number) {
     <app-card-item [card]="c" />
-    } }
+    } } }
   </div>
 </section>
