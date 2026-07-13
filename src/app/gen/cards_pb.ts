@@ -10,7 +10,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file cards.proto.
  */
 export const file_cards: GenFile = /*@__PURE__*/
-  fileDesc("CgtjYXJkcy5wcm90bxIFY2FyZHMiUwoGUHJpY2VzEgsKA3VzZBgBIAEoCRIQCgh1c2RfZm9pbBgCIAEoCRILCgNldXIYAyABKAkSEAoIZXVyX2ZvaWwYBCABKAkSCwoDdGl4GAUgASgJIoIBCgRDYXJkEgwKBG5hbWUYASABKAkSCwoDc2V0GAIgASgJEg4KBm51bWJlchgDIAEoCRINCgVjb3VudBgEIAEoBRIRCglpbWFnZV91cmwYBSABKAkSHQoGcHJpY2VzGAYgASgLMg0uY2FyZHMuUHJpY2VzEg4KBmNvbG9ycxgHIAMoCSJKCg5BZGRDYXJkUmVxdWVzdBIMCgRuYW1lGAEgASgJEgsKA3NldBgCIAEoCRIOCgZudW1iZXIYAyABKAkSDQoFY291bnQYBCABKAUiLAoPQWRkQ2FyZFJlc3BvbnNlEhkKBGNhcmQYASABKAsyCy5jYXJkcy5DYXJkIjsKDkdldENhcmRSZXF1ZXN0EgwKBG5hbWUYASABKAkSCwoDc2V0GAIgASgJEg4KBm51bWJlchgDIAEoCSIsCg9HZXRDYXJkUmVzcG9uc2USGQoEY2FyZBgBIAEoCzILLmNhcmRzLkNhcmQiJQoVR2V0Q2FyZHNCeU5hbWVSZXF1ZXN0EgwKBG5hbWUYASABKAkiNAoWR2V0Q2FyZHNCeU5hbWVSZXNwb25zZRIaCgVjYXJkcxgBIAMoCzILLmNhcmRzLkNhcmQiSgoUR2V0Q2FyZHNCeVNldFJlcXVlc3QSCwoDc2V0GAEgASgJEhEKCXBhZ2Vfc2l6ZRgCIAEoBRISCgpwYWdlX3Rva2VuGAMgASgJIkwKFUdldENhcmRzQnlTZXRSZXNwb25zZRIaCgVjYXJkcxgBIAMoCzILLmNhcmRzLkNhcmQSFwoPbmV4dF9wYWdlX3Rva2VuGAIgASgJImYKElNlYXJjaENhcmRzUmVxdWVzdBIMCgRuYW1lGAEgASgJEgsKA3NldBgCIAEoCRIOCgZjb2xvcnMYAyADKAkSEQoJcGFnZV9zaXplGAQgASgFEhIKCnBhZ2VfdG9rZW4YBSABKAkiSgoTU2VhcmNoQ2FyZHNSZXNwb25zZRIaCgVjYXJkcxgBIAMoCzILLmNhcmRzLkNhcmQSFwoPbmV4dF9wYWdlX3Rva2VuGAIgASgJIjkKEExpc3RDYXJkc1JlcXVlc3QSEQoJcGFnZV9zaXplGAEgASgFEhIKCnBhZ2VfdG9rZW4YAiABKAkiSAoRTGlzdENhcmRzUmVzcG9uc2USGgoFY2FyZHMYASADKAsyCy5jYXJkcy5DYXJkEhcKD25leHRfcGFnZV90b2tlbhgCIAEoCTKpAwoGTVRHUlBDEjoKB0FkZENhcmQSFS5jYXJkcy5BZGRDYXJkUmVxdWVzdBoWLmNhcmRzLkFkZENhcmRSZXNwb25zZSIAEjoKB0dldENhcmQSFS5jYXJkcy5HZXRDYXJkUmVxdWVzdBoWLmNhcmRzLkdldENhcmRSZXNwb25zZSIAEk8KDkdldENhcmRzQnlOYW1lEhwuY2FyZHMuR2V0Q2FyZHNCeU5hbWVSZXF1ZXN0Gh0uY2FyZHMuR2V0Q2FyZHNCeU5hbWVSZXNwb25zZSIAEkwKDUdldENhcmRzQnlTZXQSGy5jYXJkcy5HZXRDYXJkc0J5U2V0UmVxdWVzdBocLmNhcmRzLkdldENhcmRzQnlTZXRSZXNwb25zZSIAEkYKC1NlYXJjaENhcmRzEhkuY2FyZHMuU2VhcmNoQ2FyZHNSZXF1ZXN0GhouY2FyZHMuU2VhcmNoQ2FyZHNSZXNwb25zZSIAEkAKCUxpc3RDYXJkcxIXLmNhcmRzLkxpc3RDYXJkc1JlcXVlc3QaGC5jYXJkcy5MaXN0Q2FyZHNSZXNwb25zZSIAQhVaE2JhY2tlbmRfbm9uc2Vuc2UvcGJiBnByb3RvMw");
+  fileDesc("CgtjYXJkcy5wcm90bxIFY2FyZHMiUwoGUHJpY2VzEgsKA3VzZBgBIAEoCRIQCgh1c2RfZm9pbBgCIAEoCRILCgNldXIYAyABKAkSEAoIZXVyX2ZvaWwYBCABKAkSCwoDdGl4GAUgASgJIpIBCgRDYXJkEgwKBG5hbWUYASABKAkSCwoDc2V0GAIgASgJEg4KBm51bWJlchgDIAEoCRINCgVjb3VudBgEIAEoBRIRCglpbWFnZV91cmwYBSABKAkSHQoGcHJpY2VzGAYgASgLMg0uY2FyZHMuUHJpY2VzEg4KBmNvbG9ycxgHIAMoCRIOCgZyYXJpdHkYCCABKAkiSgoOQWRkQ2FyZFJlcXVlc3QSDAoEbmFtZRgBIAEoCRILCgNzZXQYAiABKAkSDgoGbnVtYmVyGAMgASgJEg0KBWNvdW50GAQgASgFIiwKD0FkZENhcmRSZXNwb25zZRIZCgRjYXJkGAEgASgLMgsuY2FyZHMuQ2FyZCI7Cg5HZXRDYXJkUmVxdWVzdBIMCgRuYW1lGAEgASgJEgsKA3NldBgCIAEoCRIOCgZudW1iZXIYAyABKAkiLAoPR2V0Q2FyZFJlc3BvbnNlEhkKBGNhcmQYASABKAsyCy5jYXJkcy5DYXJkIiUKFUdldENhcmRzQnlOYW1lUmVxdWVzdBIMCgRuYW1lGAEgASgJIjQKFkdldENhcmRzQnlOYW1lUmVzcG9uc2USGgoFY2FyZHMYASADKAsyCy5jYXJkcy5DYXJkIkoKFEdldENhcmRzQnlTZXRSZXF1ZXN0EgsKA3NldBgBIAEoCRIRCglwYWdlX3NpemUYAiABKAUSEgoKcGFnZV90b2tlbhgDIAEoCSJMChVHZXRDYXJkc0J5U2V0UmVzcG9uc2USGgoFY2FyZHMYASADKAsyCy5jYXJkcy5DYXJkEhcKD25leHRfcGFnZV90b2tlbhgCIAEoCSJ2ChJTZWFyY2hDYXJkc1JlcXVlc3QSDAoEbmFtZRgBIAEoCRILCgNzZXQYAiABKAkSDgoGY29sb3JzGAMgAygJEhEKCXBhZ2Vfc2l6ZRgEIAEoBRISCgpwYWdlX3Rva2VuGAUgASgJEg4KBnJhcml0eRgGIAMoCSJKChNTZWFyY2hDYXJkc1Jlc3BvbnNlEhoKBWNhcmRzGAEgAygLMgsuY2FyZHMuQ2FyZBIXCg9uZXh0X3BhZ2VfdG9rZW4YAiABKAkiOQoQTGlzdENhcmRzUmVxdWVzdBIRCglwYWdlX3NpemUYASABKAUSEgoKcGFnZV90b2tlbhgCIAEoCSJIChFMaXN0Q2FyZHNSZXNwb25zZRIaCgVjYXJkcxgBIAMoCzILLmNhcmRzLkNhcmQSFwoPbmV4dF9wYWdlX3Rva2VuGAIgASgJIhEKD0xpc3RTZXRzUmVxdWVzdCIgChBMaXN0U2V0c1Jlc3BvbnNlEgwKBHNldHMYASADKAky6AMKBk1UR1JQQxI6CgdBZGRDYXJkEhUuY2FyZHMuQWRkQ2FyZFJlcXVlc3QaFi5jYXJkcy5BZGRDYXJkUmVzcG9uc2UiABI6CgdHZXRDYXJkEhUuY2FyZHMuR2V0Q2FyZFJlcXVlc3QaFi5jYXJkcy5HZXRDYXJkUmVzcG9uc2UiABJPCg5HZXRDYXJkc0J5TmFtZRIcLmNhcmRzLkdldENhcmRzQnlOYW1lUmVxdWVzdBodLmNhcmRzLkdldENhcmRzQnlOYW1lUmVzcG9uc2UiABJMCg1HZXRDYXJkc0J5U2V0EhsuY2FyZHMuR2V0Q2FyZHNCeVNldFJlcXVlc3QaHC5jYXJkcy5HZXRDYXJkc0J5U2V0UmVzcG9uc2UiABJGCgtTZWFyY2hDYXJkcxIZLmNhcmRzLlNlYXJjaENhcmRzUmVxdWVzdBoaLmNhcmRzLlNlYXJjaENhcmRzUmVzcG9uc2UiABJACglMaXN0Q2FyZHMSFy5jYXJkcy5MaXN0Q2FyZHNSZXF1ZXN0GhguY2FyZHMuTGlzdENhcmRzUmVzcG9uc2UiABI9CghMaXN0U2V0cxIWLmNhcmRzLkxpc3RTZXRzUmVxdWVzdBoXLmNhcmRzLkxpc3RTZXRzUmVzcG9uc2UiAEIVWhNiYWNrZW5kX25vbnNlbnNlL3BiYgZwcm90bzM");
 
 /**
  * Prices message
@@ -91,6 +91,11 @@ export type Card = Message<"cards.Card"> & {
    * @generated from field: repeated string colors = 7;
    */
   colors: string[];
+
+  /**
+   * @generated from field: string rarity = 8;
+   */
+  rarity: string;
 };
 
 /**
@@ -316,6 +321,11 @@ export type SearchCardsRequest = Message<"cards.SearchCardsRequest"> & {
    * @generated from field: string page_token = 5;
    */
   pageToken: string;
+
+  /**
+   * @generated from field: repeated string rarity = 6;
+   */
+  rarity: string[];
 };
 
 /**
@@ -394,6 +404,36 @@ export const ListCardsResponseSchema: GenMessage<ListCardsResponse> = /*@__PURE_
   messageDesc(file_cards, 13);
 
 /**
+ * @generated from message cards.ListSetsRequest
+ */
+export type ListSetsRequest = Message<"cards.ListSetsRequest"> & {
+};
+
+/**
+ * Describes the message cards.ListSetsRequest.
+ * Use `create(ListSetsRequestSchema)` to create a new message.
+ */
+export const ListSetsRequestSchema: GenMessage<ListSetsRequest> = /*@__PURE__*/
+  messageDesc(file_cards, 14);
+
+/**
+ * @generated from message cards.ListSetsResponse
+ */
+export type ListSetsResponse = Message<"cards.ListSetsResponse"> & {
+  /**
+   * @generated from field: repeated string sets = 1;
+   */
+  sets: string[];
+};
+
+/**
+ * Describes the message cards.ListSetsResponse.
+ * Use `create(ListSetsResponseSchema)` to create a new message.
+ */
+export const ListSetsResponseSchema: GenMessage<ListSetsResponse> = /*@__PURE__*/
+  messageDesc(file_cards, 15);
+
+/**
  * @generated from service cards.MTGRPC
  */
 export const MTGRPC: GenService<{
@@ -444,6 +484,14 @@ export const MTGRPC: GenService<{
     methodKind: "unary";
     input: typeof ListCardsRequestSchema;
     output: typeof ListCardsResponseSchema;
+  },
+  /**
+   * @generated from rpc cards.MTGRPC.ListSets
+   */
+  listSets: {
+    methodKind: "unary";
+    input: typeof ListSetsRequestSchema;
+    output: typeof ListSetsResponseSchema;
   },
 }> = /*@__PURE__*/
   serviceDesc(file_cards, 0);

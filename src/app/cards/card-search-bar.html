@@ -1,0 +1,9 @@
+<div class="search-bar-container">
+  <input
+    class="search-bar-input"
+    type="search"
+    placeholder="Search for cards..."
+    [value]="value()"
+    (input)="value.set($any($event.target)).value"
+  />
+</div>

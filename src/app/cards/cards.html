@@ -1,4 +1,6 @@
 <section style="padding: 2rem; font-family: system-ui">
+  <app-card-search-bar [(value)]="name" />
+  <p>{{name()}}</p>
   <h2>Cards</h2>
   <button (click)="cardsResource.reload()">Reload</button>
   <div class="card-grid">

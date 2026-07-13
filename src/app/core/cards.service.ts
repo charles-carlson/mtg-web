@@ -9,6 +9,7 @@ import {
   GetCardsBySetRequestSchema,
   SearchCardsRequestSchema,
   ListCardsRequestSchema,
+  ListSetsRequestSchema,
 } from '../gen/cards_pb';
 
 /**
@@ -42,5 +43,9 @@ export class CardsService {
 
   listCards(req: MessageInitShape<typeof ListCardsRequestSchema> = {}) {
     return this.client.listCards(req);
+  }
+
+  listSets(req: MessageInitShape<typeof ListSetsRequestSchema> = {}) {
+    return this.client.listSets(req);
   }
 }
