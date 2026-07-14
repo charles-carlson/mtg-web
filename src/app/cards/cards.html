@@ -1,5 +1,6 @@
 <section style="padding: 2rem; font-family: system-ui">
   <app-card-search-bar [(value)]="name" />
+  <app-card-filter-dropdown (apply)="onFilterApply($event)" />
   <p>{{name()}}</p>
   <h2>Cards</h2>
   <button (click)="cardsResource.reload()">Reload</button>

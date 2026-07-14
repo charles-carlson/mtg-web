@@ -1,0 +1,94 @@
+<!-- trigger lives with the component so it's self-contained -->
+<button type="button" class="cd-filter-trigger" (click)="open()">
+  Filters @if (activeCount() > 0) { <span class="cd-badge">{{ activeCount() }}</span> }
+</button>
+
+<dialog #drawer class="cd-filter">
+  <form>
+    <header class="cd-filter-header">
+      <h3>Filters</h3>
+      <button type="button" class="cd-close" (click)="close()">Close</button>
+    </header>
+
+    <!-- Colors: fixed domain -->
+    <fieldset class="cd-filter-block">
+      <legend>Colors</legend>
+      <ul class="cd-filter-content list">
+        @for (c of colors; track c.code) {
+        <li>
+          <input
+            type="checkbox"
+            [id]="'color-' + c.code"
+            [checked]="selectedColors().includes(c.code)"
+            (change)="toggleColor(c.code)"
+          />
+          <label [for]="'color-' + c.code">{{ c.label }}</label>
+        </li>
+        }
+      </ul>
+    </fieldset>
+
+    <!-- Rarity: fixed domain -->
+    <fieldset class="cd-filter-block">
+      <legend>Rarity</legend>
+      <ul class="cd-filter-content list">
+        @for (r of rarities; track r.value) {
+        <li>
+          <input
+            type="checkbox"
+            [id]="'rarity-' + r.value"
+            [checked]="selectedRarities().includes(r.value)"
+            (change)="toggleRarity(r.value)"
+          />
+          <label [for]="'rarity-' + r.value">{{ r.label }}</label>
+        </li>
+        }
+      </ul>
+    </fieldset>
+
+    <!-- Sets: fetched + mini-search -->
+    <fieldset class="cd-filter-block">
+      <legend>Sets</legend>
+      <div class="cd-filter-content">
+        <input
+          #q
+          type="search"
+          placeholder="Search sets…"
+          [value]="query()"
+          (input)="query.set(q.value)"
+        />
+        <ul class="cd-filter-content list cd-set-list">
+          <li>
+            <input
+              type="radio"
+              name="set"
+              id="set-all"
+              [checked]="selectedSet() === ''"
+              (change)="selectSet('')"
+            />
+            <label for="set-all">All sets</label>
+          </li>
+          @for (s of filteredSets(); track s) {
+          <li>
+            <input
+              type="radio"
+              name="set"
+              [id]="'set-' + s"
+              [checked]="selectedSet() === s"
+              (change)="selectSet(s)"
+            />
+            <label [for]="'set-' + s">{{ s }}</label>
+          </li>
+          } @empty {
+          <li class="cd-empty">No sets match "{{ query() }}"</li>
+          }
+        </ul>
+      </div>
+    </fieldset>
+
+    <footer class="cd-filter-footer">
+      <button type="button" (click)="clearAll()">Clear all</button>
+      <button type="button" (click)="onApply()">Apply</button>
+    </footer>
+  </form>
+</dialog>

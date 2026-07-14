@@ -4,6 +4,6 @@
     type="search"
     placeholder="Search for cards..."
     [value]="value()"
-    (input)="value.set($any($event.target)).value"
+    (input)="value.set($any($event.target).value)"
   />
 </div>

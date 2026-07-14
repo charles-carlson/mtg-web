@@ -1,0 +1,266 @@
+/* --------------------------------
+   Card filter drawer
+   Palette lifted from the CodyHouse template; mechanics are native <dialog>.
+   -------------------------------- */
+:host {
+  --cd-primary: #41307c;
+  --cd-primary-dark: #37296a;
+  --cd-text: #331d35;
+  --cd-muted: #9a9a9a;
+  --cd-border: #e6e6e6;
+  --cd-surface: #ffffff;
+}
+
+/* --------------------------------
+   Trigger button
+   -------------------------------- */
+.cd-filter-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.6em 1.2em;
+  border: none;
+  border-radius: 4px;
+  background: var(--cd-primary);
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.cd-filter-trigger:hover {
+  background: var(--cd-primary-dark);
+}
+.cd-filter-trigger:focus-visible {
+  outline: 2px solid var(--cd-primary);
+  outline-offset: 2px;
+}
+
+.cd-badge {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.6em;
+  height: 1.6em;
+  padding: 0 0.4em;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--cd-primary);
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+/* --------------------------------
+   Dialog as a right-side drawer
+   -------------------------------- */
+dialog.cd-filter {
+  /* pin to the right edge, full height (use `margin-right:auto` to flip left) */
+  margin: 0 0 0 auto;
+  height: 100dvh;
+  max-height: 100dvh;
+  width: min(320px, 90vw);
+  padding: 0;
+  border: none;
+  background: var(--cd-surface);
+  color: var(--cd-text);
+  box-shadow: -4px 0 20px rgb(0 0 0 / 0.2);
+  overflow: hidden; /* inner <form> scrolls, not the dialog */
+
+  /* slide-in / slide-out */
+  translate: 0 0;
+  transition:
+    translate 0.3s ease,
+    display 0.3s allow-discrete,
+    overlay 0.3s allow-discrete;
+}
+
+/* off-screen when closed... */
+dialog.cd-filter:not([open]) {
+  translate: 100%;
+}
+/* ...and animate in from off-screen when it opens */
+@starting-style {
+  dialog.cd-filter[open] {
+    translate: 100%;
+  }
+}
+
+/* If this backdrop rule doesn't take effect, move it to global styles.css —
+   Angular's style scoping occasionally misses the ::backdrop pseudo-element. */
+dialog.cd-filter::backdrop {
+  background: rgb(0 0 0 / 0.4);
+  transition: opacity 0.3s allow-discrete;
+}
+
+/* --------------------------------
+   Form layout: sticky header + footer, scrolling middle
+   -------------------------------- */
+dialog.cd-filter form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.cd-filter-header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 0 20px;
+  height: 50px;
+  background: var(--cd-primary);
+  color: #fff;
+}
+.cd-filter-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.cd-close {
+  height: 50px;
+  width: 60px;
+  border: none;
+  background: var(--cd-primary-dark);
+  color: #fff;
+  font: inherit;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.cd-close:hover {
+  background: #32255f;
+}
+
+/* --------------------------------
+   Filter blocks (fieldsets)
+   -------------------------------- */
+.cd-filter-block {
+  margin: 0;
+  padding: 20px;
+  border: none;
+  border-bottom: 1px solid var(--cd-border);
+}
+.cd-filter-block legend {
+  padding: 0;
+  margin-bottom: 0.8em;
+  color: var(--cd-muted);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.cd-filter-content .list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.cd-filter-content .list li {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  margin-bottom: 0.8em;
+}
+.cd-filter-content .list li:last-of-type {
+  margin-bottom: 0;
+}
+
+/* native checkboxes, themed — no SVG, no custom pseudo-elements */
+.cd-filter-block input[type='checkbox'],
+.cd-filter-block input[type='radio'] {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: var(--cd-primary);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.cd-filter-block label {
+  font-size: 1.4rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* --------------------------------
+   Set search + scrollable list
+   -------------------------------- */
+.cd-filter-block input[type='search'] {
+  width: 100%;
+  padding: 0.8em;
+  margin-bottom: 0.8em;
+  border: 2px solid transparent;
+  border-radius: 0;
+  background: var(--cd-border);
+  font: inherit;
+  font-size: 1.6rem; /* >=16px avoids iOS zoom-on-focus */
+  appearance: none;
+}
+.cd-filter-block input[type='search']:focus {
+  outline: none;
+  background: #fff;
+  border-color: var(--cd-primary);
+}
+.cd-filter-block input[type='search']::-webkit-search-cancel-button {
+  display: none;
+}
+
+.cd-set-list {
+  max-height: 40vh;
+  overflow-y: auto;
+}
+.cd-empty {
+  color: var(--cd-muted);
+  font-size: 1.3rem;
+  font-style: italic;
+}
+
+/* --------------------------------
+   Footer actions
+   -------------------------------- */
+.cd-filter-footer {
+  position: sticky;
+  bottom: 0;
+  margin-top: auto; /* push to bottom when content is short */
+  display: flex;
+  gap: 0.8em;
+  padding: 16px 20px;
+  background: var(--cd-surface);
+  border-top: 1px solid var(--cd-border);
+}
+.cd-filter-footer button {
+  flex: 1;
+  padding: 0.7em 1em;
+  border-radius: 4px;
+  font: inherit;
+  font-weight: 700;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+/* Clear all = secondary */
+.cd-filter-footer button:first-child {
+  border: 2px solid var(--cd-border);
+  background: transparent;
+  color: var(--cd-muted);
+}
+.cd-filter-footer button:first-child:hover {
+  border-color: var(--cd-primary);
+  color: var(--cd-primary);
+}
+/* Apply = primary */
+.cd-filter-footer button:last-child {
+  border: 2px solid var(--cd-primary);
+  background: var(--cd-primary);
+  color: #fff;
+}
+.cd-filter-footer button:last-child:hover {
+  background: var(--cd-primary-dark);
+  border-color: var(--cd-primary-dark);
+}
