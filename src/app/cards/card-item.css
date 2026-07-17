@@ -2,29 +2,36 @@ img {
   width: 100%; /* fill the grid cell */
   height: auto; /* keep aspect ratio */
   display: block;
+  border-radius: 4.75% / 3.5%; /* clip the white JPG corners to the card's rounded edge */
 }
 .card-hover {
   position: relative;
   box-sizing: border-box;
   width: 100%;
-  padding: 16px;
-  background: #fff;
-  border-radius: 14px;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
-  transition: 0.35s;
+  padding: 12px;
+  background: color-mix(in srgb, var(--cd-surface) 55%, transparent);
+  border: 1px solid var(--cd-border);
+  border-radius: var(--cd-radius);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s ease-out, box-shadow 0.25s ease-out, border-color 0.25s ease-out;
 }
 .card-hover:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+  transform: translateY(-10px);
+  border-color: var(--cd-accent);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5), var(--cd-glow-cyan);
 }
 .qty-badge {
   position: absolute;
   top: 8px;
   right: 8px;
-  padding: 4px 9px;
-  border-radius: 999px;
-  background: rgba(0, 0, 0, 0.72);
-  color: #fff;
-  font: 600 0.78rem/1 system-ui; /* weight / size / line-height */
+  padding: 4px 10px;
+  border-radius: var(--cd-radius);
+  background: color-mix(in srgb, var(--pal-void) 82%, transparent);
+  border: 1px solid color-mix(in srgb, var(--cd-secondary) 55%, transparent);
+  color: var(--cd-secondary);
+  font: 600 0.72rem/1 var(--cd-font-mono); /* weight / size / line-height */
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-shadow: var(--cd-glow-pink);
   backdrop-filter: blur(4px);
 }

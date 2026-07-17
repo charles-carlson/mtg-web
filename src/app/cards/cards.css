@@ -1,7 +1,77 @@
+.cards-page {
+  padding: 2rem;
+  font-family: var(--cd-font-mono);
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
 .card-grid {
   display: grid;
   /*"Make as many columns as fit, each no smaller than 180px,
   and share any extra space equally so they stretch to fill the row."*/
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 1.5rem;
+}
+.search-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0 2rem;
+}
+/* let the search bar grow between the buttons, buttons stay natural width */
+.search-menu app-card-search-bar {
+  flex: 1 1 auto;
+  max-width: 640px;
+}
+
+/* grid status messages (loading / error) — monospace, neon */
+.grid-status {
+  grid-column: 1 / -1;
+  margin: 2rem 0;
+  text-align: center;
+  font-size: 0.875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.grid-loading {
+  color: var(--cd-accent);
+  text-shadow: var(--cd-glow-cyan);
+}
+.grid-error {
+  color: var(--cd-secondary);
+  text-shadow: var(--cd-glow-pink);
+}
+
+/* icon-only reload button, sized to match the Filters trigger */
+.reload-btn {
+  display: inline-grid;
+  place-items: center;
+  padding: 0.6em;
+  font-size: 1.3rem;
+  line-height: 1;
+  border: 1.5px solid var(--cd-border);
+  border-radius: var(--cd-radius);
+  background: color-mix(in srgb, var(--cd-primary) 14%, transparent);
+  color: var(--cd-accent);
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, color 0.2s, border-color 0.2s;
+}
+.reload-btn svg {
+  display: block;
+  width: 1.2em;
+  height: 1.2em;
+}
+.reload-btn:hover {
+  background: color-mix(in srgb, var(--cd-primary) 26%, transparent);
+  border-color: var(--cd-primary);
+  color: #fff;
+  box-shadow: var(--cd-glow-blue);
+}
+.reload-btn:active {
+  transform: translateY(1px);
+}
+.reload-btn:focus-visible {
+  outline: 2px solid var(--cd-primary);
+  outline-offset: 2px;
 }

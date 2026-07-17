@@ -10,7 +10,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file cards.proto.
  */
 export const file_cards: GenFile = /*@__PURE__*/
-  fileDesc("CgtjYXJkcy5wcm90bxIFY2FyZHMiUwoGUHJpY2VzEgsKA3VzZBgBIAEoCRIQCgh1c2RfZm9pbBgCIAEoCRILCgNldXIYAyABKAkSEAoIZXVyX2ZvaWwYBCABKAkSCwoDdGl4GAUgASgJIpIBCgRDYXJkEgwKBG5hbWUYASABKAkSCwoDc2V0GAIgASgJEg4KBm51bWJlchgDIAEoCRINCgVjb3VudBgEIAEoBRIRCglpbWFnZV91cmwYBSABKAkSHQoGcHJpY2VzGAYgASgLMg0uY2FyZHMuUHJpY2VzEg4KBmNvbG9ycxgHIAMoCRIOCgZyYXJpdHkYCCABKAkiSgoOQWRkQ2FyZFJlcXVlc3QSDAoEbmFtZRgBIAEoCRILCgNzZXQYAiABKAkSDgoGbnVtYmVyGAMgASgJEg0KBWNvdW50GAQgASgFIiwKD0FkZENhcmRSZXNwb25zZRIZCgRjYXJkGAEgASgLMgsuY2FyZHMuQ2FyZCI7Cg5HZXRDYXJkUmVxdWVzdBIMCgRuYW1lGAEgASgJEgsKA3NldBgCIAEoCRIOCgZudW1iZXIYAyABKAkiLAoPR2V0Q2FyZFJlc3BvbnNlEhkKBGNhcmQYASABKAsyCy5jYXJkcy5DYXJkIiUKFUdldENhcmRzQnlOYW1lUmVxdWVzdBIMCgRuYW1lGAEgASgJIjQKFkdldENhcmRzQnlOYW1lUmVzcG9uc2USGgoFY2FyZHMYASADKAsyCy5jYXJkcy5DYXJkIkoKFEdldENhcmRzQnlTZXRSZXF1ZXN0EgsKA3NldBgBIAEoCRIRCglwYWdlX3NpemUYAiABKAUSEgoKcGFnZV90b2tlbhgDIAEoCSJMChVHZXRDYXJkc0J5U2V0UmVzcG9uc2USGgoFY2FyZHMYASADKAsyCy5jYXJkcy5DYXJkEhcKD25leHRfcGFnZV90b2tlbhgCIAEoCSJ2ChJTZWFyY2hDYXJkc1JlcXVlc3QSDAoEbmFtZRgBIAEoCRILCgNzZXQYAiABKAkSDgoGY29sb3JzGAMgAygJEhEKCXBhZ2Vfc2l6ZRgEIAEoBRISCgpwYWdlX3Rva2VuGAUgASgJEg4KBnJhcml0eRgGIAMoCSJKChNTZWFyY2hDYXJkc1Jlc3BvbnNlEhoKBWNhcmRzGAEgAygLMgsuY2FyZHMuQ2FyZBIXCg9uZXh0X3BhZ2VfdG9rZW4YAiABKAkiOQoQTGlzdENhcmRzUmVxdWVzdBIRCglwYWdlX3NpemUYASABKAUSEgoKcGFnZV90b2tlbhgCIAEoCSJIChFMaXN0Q2FyZHNSZXNwb25zZRIaCgVjYXJkcxgBIAMoCzILLmNhcmRzLkNhcmQSFwoPbmV4dF9wYWdlX3Rva2VuGAIgASgJIhEKD0xpc3RTZXRzUmVxdWVzdCIgChBMaXN0U2V0c1Jlc3BvbnNlEgwKBHNldHMYASADKAky6AMKBk1UR1JQQxI6CgdBZGRDYXJkEhUuY2FyZHMuQWRkQ2FyZFJlcXVlc3QaFi5jYXJkcy5BZGRDYXJkUmVzcG9uc2UiABI6CgdHZXRDYXJkEhUuY2FyZHMuR2V0Q2FyZFJlcXVlc3QaFi5jYXJkcy5HZXRDYXJkUmVzcG9uc2UiABJPCg5HZXRDYXJkc0J5TmFtZRIcLmNhcmRzLkdldENhcmRzQnlOYW1lUmVxdWVzdBodLmNhcmRzLkdldENhcmRzQnlOYW1lUmVzcG9uc2UiABJMCg1HZXRDYXJkc0J5U2V0EhsuY2FyZHMuR2V0Q2FyZHNCeVNldFJlcXVlc3QaHC5jYXJkcy5HZXRDYXJkc0J5U2V0UmVzcG9uc2UiABJGCgtTZWFyY2hDYXJkcxIZLmNhcmRzLlNlYXJjaENhcmRzUmVxdWVzdBoaLmNhcmRzLlNlYXJjaENhcmRzUmVzcG9uc2UiABJACglMaXN0Q2FyZHMSFy5jYXJkcy5MaXN0Q2FyZHNSZXF1ZXN0GhguY2FyZHMuTGlzdENhcmRzUmVzcG9uc2UiABI9CghMaXN0U2V0cxIWLmNhcmRzLkxpc3RTZXRzUmVxdWVzdBoXLmNhcmRzLkxpc3RTZXRzUmVzcG9uc2UiAEIVWhNiYWNrZW5kX25vbnNlbnNlL3BiYgZwcm90bzM");
+  fileDesc("CgtjYXJkcy5wcm90bxIFY2FyZHMiUwoGUHJpY2VzEgsKA3VzZBgBIAEoCRIQCgh1c2RfZm9pbBgCIAEoCRILCgNldXIYAyABKAkSEAoIZXVyX2ZvaWwYBCABKAkSCwoDdGl4GAUgASgJIpIBCgRDYXJkEgwKBG5hbWUYASABKAkSCwoDc2V0GAIgASgJEg4KBm51bWJlchgDIAEoCRINCgVjb3VudBgEIAEoBRIRCglpbWFnZV91cmwYBSABKAkSHQoGcHJpY2VzGAYgASgLMg0uY2FyZHMuUHJpY2VzEg4KBmNvbG9ycxgHIAMoCRIOCgZyYXJpdHkYCCABKAkiOwoOR2V0Q2FyZFJlcXVlc3QSDAoEbmFtZRgBIAEoCRILCgNzZXQYAiABKAkSDgoGbnVtYmVyGAMgASgJIiwKD0dldENhcmRSZXNwb25zZRIZCgRjYXJkGAEgASgLMgsuY2FyZHMuQ2FyZCJ2ChJTZWFyY2hDYXJkc1JlcXVlc3QSDAoEbmFtZRgBIAEoCRILCgNzZXQYAiABKAkSDgoGY29sb3JzGAMgAygJEhEKCXBhZ2Vfc2l6ZRgEIAEoBRISCgpwYWdlX3Rva2VuGAUgASgJEg4KBnJhcml0eRgGIAMoCSJKChNTZWFyY2hDYXJkc1Jlc3BvbnNlEhoKBWNhcmRzGAEgAygLMgsuY2FyZHMuQ2FyZBIXCg9uZXh0X3BhZ2VfdG9rZW4YAiABKAkiOQoQTGlzdENhcmRzUmVxdWVzdBIRCglwYWdlX3NpemUYASABKAUSEgoKcGFnZV90b2tlbhgCIAEoCSJIChFMaXN0Q2FyZHNSZXNwb25zZRIaCgVjYXJkcxgBIAMoCzILLmNhcmRzLkNhcmQSFwoPbmV4dF9wYWdlX3Rva2VuGAIgASgJIhEKD0xpc3RTZXRzUmVxdWVzdCIgChBMaXN0U2V0c1Jlc3BvbnNlEgwKBHNldHMYASADKAkyjQIKBk1UR1JQQxI6CgdHZXRDYXJkEhUuY2FyZHMuR2V0Q2FyZFJlcXVlc3QaFi5jYXJkcy5HZXRDYXJkUmVzcG9uc2UiABJGCgtTZWFyY2hDYXJkcxIZLmNhcmRzLlNlYXJjaENhcmRzUmVxdWVzdBoaLmNhcmRzLlNlYXJjaENhcmRzUmVzcG9uc2UiABJACglMaXN0Q2FyZHMSFy5jYXJkcy5MaXN0Q2FyZHNSZXF1ZXN0GhguY2FyZHMuTGlzdENhcmRzUmVzcG9uc2UiABI9CghMaXN0U2V0cxIWLmNhcmRzLkxpc3RTZXRzUmVxdWVzdBoXLmNhcmRzLkxpc3RTZXRzUmVzcG9uc2UiAEIVWhNiYWNrZW5kX25vbnNlbnNlL3BiYgZwcm90bzM");
 
 /**
  * Prices message
@@ -106,57 +106,6 @@ export const CardSchema: GenMessage<Card> = /*@__PURE__*/
   messageDesc(file_cards, 1);
 
 /**
- * AddCard
- *
- * @generated from message cards.AddCardRequest
- */
-export type AddCardRequest = Message<"cards.AddCardRequest"> & {
-  /**
-   * @generated from field: string name = 1;
-   */
-  name: string;
-
-  /**
-   * @generated from field: string set = 2;
-   */
-  set: string;
-
-  /**
-   * @generated from field: string number = 3;
-   */
-  number: string;
-
-  /**
-   * @generated from field: int32 count = 4;
-   */
-  count: number;
-};
-
-/**
- * Describes the message cards.AddCardRequest.
- * Use `create(AddCardRequestSchema)` to create a new message.
- */
-export const AddCardRequestSchema: GenMessage<AddCardRequest> = /*@__PURE__*/
-  messageDesc(file_cards, 2);
-
-/**
- * @generated from message cards.AddCardResponse
- */
-export type AddCardResponse = Message<"cards.AddCardResponse"> & {
-  /**
-   * @generated from field: cards.Card card = 1;
-   */
-  card?: Card | undefined;
-};
-
-/**
- * Describes the message cards.AddCardResponse.
- * Use `create(AddCardResponseSchema)` to create a new message.
- */
-export const AddCardResponseSchema: GenMessage<AddCardResponse> = /*@__PURE__*/
-  messageDesc(file_cards, 3);
-
-/**
  * GetCard — exact lookup by name + set + number
  *
  * @generated from message cards.GetCardRequest
@@ -183,7 +132,7 @@ export type GetCardRequest = Message<"cards.GetCardRequest"> & {
  * Use `create(GetCardRequestSchema)` to create a new message.
  */
 export const GetCardRequestSchema: GenMessage<GetCardRequest> = /*@__PURE__*/
-  messageDesc(file_cards, 4);
+  messageDesc(file_cards, 2);
 
 /**
  * @generated from message cards.GetCardResponse
@@ -200,94 +149,7 @@ export type GetCardResponse = Message<"cards.GetCardResponse"> & {
  * Use `create(GetCardResponseSchema)` to create a new message.
  */
 export const GetCardResponseSchema: GenMessage<GetCardResponse> = /*@__PURE__*/
-  messageDesc(file_cards, 5);
-
-/**
- * GetCardsByName — all printings of a card across sets
- *
- * @generated from message cards.GetCardsByNameRequest
- */
-export type GetCardsByNameRequest = Message<"cards.GetCardsByNameRequest"> & {
-  /**
-   * @generated from field: string name = 1;
-   */
-  name: string;
-};
-
-/**
- * Describes the message cards.GetCardsByNameRequest.
- * Use `create(GetCardsByNameRequestSchema)` to create a new message.
- */
-export const GetCardsByNameRequestSchema: GenMessage<GetCardsByNameRequest> = /*@__PURE__*/
-  messageDesc(file_cards, 6);
-
-/**
- * @generated from message cards.GetCardsByNameResponse
- */
-export type GetCardsByNameResponse = Message<"cards.GetCardsByNameResponse"> & {
-  /**
-   * @generated from field: repeated cards.Card cards = 1;
-   */
-  cards: Card[];
-};
-
-/**
- * Describes the message cards.GetCardsByNameResponse.
- * Use `create(GetCardsByNameResponseSchema)` to create a new message.
- */
-export const GetCardsByNameResponseSchema: GenMessage<GetCardsByNameResponse> = /*@__PURE__*/
-  messageDesc(file_cards, 7);
-
-/**
- * GetCardsBySet — all cards in a given set
- *
- * @generated from message cards.GetCardsBySetRequest
- */
-export type GetCardsBySetRequest = Message<"cards.GetCardsBySetRequest"> & {
-  /**
-   * @generated from field: string set = 1;
-   */
-  set: string;
-
-  /**
-   * @generated from field: int32 page_size = 2;
-   */
-  pageSize: number;
-
-  /**
-   * @generated from field: string page_token = 3;
-   */
-  pageToken: string;
-};
-
-/**
- * Describes the message cards.GetCardsBySetRequest.
- * Use `create(GetCardsBySetRequestSchema)` to create a new message.
- */
-export const GetCardsBySetRequestSchema: GenMessage<GetCardsBySetRequest> = /*@__PURE__*/
-  messageDesc(file_cards, 8);
-
-/**
- * @generated from message cards.GetCardsBySetResponse
- */
-export type GetCardsBySetResponse = Message<"cards.GetCardsBySetResponse"> & {
-  /**
-   * @generated from field: repeated cards.Card cards = 1;
-   */
-  cards: Card[];
-
-  /**
-   * @generated from field: string next_page_token = 2;
-   */
-  nextPageToken: string;
-};
-
-/**
- * Describes the message cards.GetCardsBySetResponse.
- * Use `create(GetCardsBySetResponseSchema)` to create a new message.
- */
-export const GetCardsBySetResponseSchema: GenMessage<GetCardsBySetResponse> = /*@__PURE__*/
-  messageDesc(file_cards, 9);
+  messageDesc(file_cards, 3);
 
 /**
  * SearchCards — flexible filter, all fields optional
@@ -333,7 +195,7 @@ export type SearchCardsRequest = Message<"cards.SearchCardsRequest"> & {
  * Use `create(SearchCardsRequestSchema)` to create a new message.
  */
 export const SearchCardsRequestSchema: GenMessage<SearchCardsRequest> = /*@__PURE__*/
-  messageDesc(file_cards, 10);
+  messageDesc(file_cards, 4);
 
 /**
  * @generated from message cards.SearchCardsResponse
@@ -355,7 +217,7 @@ export type SearchCardsResponse = Message<"cards.SearchCardsResponse"> & {
  * Use `create(SearchCardsResponseSchema)` to create a new message.
  */
 export const SearchCardsResponseSchema: GenMessage<SearchCardsResponse> = /*@__PURE__*/
-  messageDesc(file_cards, 11);
+  messageDesc(file_cards, 5);
 
 /**
  * ListCards — full collection with optional pagination
@@ -379,7 +241,7 @@ export type ListCardsRequest = Message<"cards.ListCardsRequest"> & {
  * Use `create(ListCardsRequestSchema)` to create a new message.
  */
 export const ListCardsRequestSchema: GenMessage<ListCardsRequest> = /*@__PURE__*/
-  messageDesc(file_cards, 12);
+  messageDesc(file_cards, 6);
 
 /**
  * @generated from message cards.ListCardsResponse
@@ -401,7 +263,7 @@ export type ListCardsResponse = Message<"cards.ListCardsResponse"> & {
  * Use `create(ListCardsResponseSchema)` to create a new message.
  */
 export const ListCardsResponseSchema: GenMessage<ListCardsResponse> = /*@__PURE__*/
-  messageDesc(file_cards, 13);
+  messageDesc(file_cards, 7);
 
 /**
  * @generated from message cards.ListSetsRequest
@@ -414,7 +276,7 @@ export type ListSetsRequest = Message<"cards.ListSetsRequest"> & {
  * Use `create(ListSetsRequestSchema)` to create a new message.
  */
 export const ListSetsRequestSchema: GenMessage<ListSetsRequest> = /*@__PURE__*/
-  messageDesc(file_cards, 14);
+  messageDesc(file_cards, 8);
 
 /**
  * @generated from message cards.ListSetsResponse
@@ -431,20 +293,12 @@ export type ListSetsResponse = Message<"cards.ListSetsResponse"> & {
  * Use `create(ListSetsResponseSchema)` to create a new message.
  */
 export const ListSetsResponseSchema: GenMessage<ListSetsResponse> = /*@__PURE__*/
-  messageDesc(file_cards, 15);
+  messageDesc(file_cards, 9);
 
 /**
  * @generated from service cards.MTGRPC
  */
 export const MTGRPC: GenService<{
-  /**
-   * @generated from rpc cards.MTGRPC.AddCard
-   */
-  addCard: {
-    methodKind: "unary";
-    input: typeof AddCardRequestSchema;
-    output: typeof AddCardResponseSchema;
-  },
   /**
    * @generated from rpc cards.MTGRPC.GetCard
    */
@@ -452,22 +306,6 @@ export const MTGRPC: GenService<{
     methodKind: "unary";
     input: typeof GetCardRequestSchema;
     output: typeof GetCardResponseSchema;
-  },
-  /**
-   * @generated from rpc cards.MTGRPC.GetCardsByName
-   */
-  getCardsByName: {
-    methodKind: "unary";
-    input: typeof GetCardsByNameRequestSchema;
-    output: typeof GetCardsByNameResponseSchema;
-  },
-  /**
-   * @generated from rpc cards.MTGRPC.GetCardsBySet
-   */
-  getCardsBySet: {
-    methodKind: "unary";
-    input: typeof GetCardsBySetRequestSchema;
-    output: typeof GetCardsBySetResponseSchema;
   },
   /**
    * @generated from rpc cards.MTGRPC.SearchCards

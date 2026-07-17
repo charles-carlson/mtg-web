@@ -1,1 +1,132 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* ============================================================
+   Retro-Futurism (cyberpunk / vaporwave) design system
+   Neon on deep black, monospace, CRT scanlines, neon glow.
+   Components reference the semantic --cd-* roles, never the raw palette.
+   ============================================================ */
+
+:root {
+  /* Raw palette (DESIGN.md) */
+  --pal-neon-blue: #0080ff;
+  --pal-hot-pink: #ff006e;
+  --pal-cyan: #00ffff;
+  --pal-black: #1a1a2e; /* deep black surface */
+  --pal-purple: #5d34d0;
+  --pal-silver: #c0c0c0;
+  --pal-gold: #ffd700;
+  --pal-pink-80s: #ff10f0;
+
+  /* Deeper canvas shades below the surface */
+  --pal-void: #0a0a14;
+  --pal-void-2: #12121f;
+
+  /* Semantic roles — components consume these */
+  --cd-primary: var(--pal-neon-blue);
+  --cd-primary-dark: #0060c0;
+  --cd-secondary: var(--pal-hot-pink);
+  --cd-accent: var(--pal-cyan);
+
+  --cd-text: #e8e8ff; /* primary text on dark surfaces */
+  --cd-muted: #8a8ac0; /* secondary / caption text */
+  --cd-border: color-mix(in srgb, var(--pal-cyan) 32%, transparent);
+
+  --cd-surface: var(--pal-black); /* elevated panel */
+  --cd-surface-warm: var(--pal-void-2); /* floating drawer / inputs */
+
+  /* Dark canvas */
+  --cd-bg: var(--pal-void);
+  --cd-on-bg: #e8e8ff;
+  --cd-on-bg-muted: var(--pal-silver);
+
+  /* Typography — monospace throughout */
+  --cd-font-mono: ui-monospace, "SFMono-Regular", "Cascadia Code", "JetBrains Mono",
+    "Source Code Pro", Menlo, Consolas, monospace;
+
+  /* Radii (DESIGN.md base 8px) */
+  --cd-radius: 8px;
+  --cd-radius-lg: 12px;
+
+  /* Neon glow tokens */
+  --cd-glow-blue: 0 0 6px color-mix(in srgb, var(--pal-neon-blue) 75%, transparent),
+    0 0 18px color-mix(in srgb, var(--pal-neon-blue) 40%, transparent);
+  --cd-glow-pink: 0 0 6px color-mix(in srgb, var(--pal-hot-pink) 75%, transparent),
+    0 0 18px color-mix(in srgb, var(--pal-hot-pink) 40%, transparent);
+  --cd-glow-cyan: 0 0 6px color-mix(in srgb, var(--pal-cyan) 75%, transparent),
+    0 0 18px color-mix(in srgb, var(--pal-cyan) 40%, transparent);
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  font-family: var(--cd-font-mono);
+  background-color: var(--cd-bg);
+  /* subtle synthwave grid + radial neon wash layered on the void */
+  background-image:
+    radial-gradient(
+      circle at 15% 0%,
+      color-mix(in srgb, var(--pal-purple) 22%, transparent),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 85% 100%,
+      color-mix(in srgb, var(--pal-hot-pink) 14%, transparent),
+      transparent 45%
+    ),
+    linear-gradient(color-mix(in srgb, var(--pal-cyan) 5%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--pal-cyan) 5%, transparent) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 44px 44px, 44px 44px;
+  background-attachment: fixed;
+  color: var(--cd-on-bg);
+}
+
+/* CRT scanline overlay — fixed, non-interactive, sits above content */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 400;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0,
+    rgba(0, 0, 0, 0) 2px,
+    rgba(0, 0, 0, 0.18) 3px,
+    rgba(0, 0, 0, 0.18) 3px
+  );
+  mix-blend-mode: multiply;
+  opacity: 0.5;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* faint CRT flicker */
+  body::before {
+    animation: cd-flicker 6s steps(60) infinite;
+  }
+}
+
+@keyframes cd-flicker {
+  0%,
+  97%,
+  100% {
+    opacity: 0.5;
+  }
+  98% {
+    opacity: 0.4;
+  }
+  99% {
+    opacity: 0.6;
+  }
+}
+
+/* Selection uses hot pink for that neon pop */
+::selection {
+  background: var(--pal-hot-pink);
+  color: #0a0a14;
+}
+
+/* thin neon scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--pal-cyan) 50%, transparent) transparent;
+}
