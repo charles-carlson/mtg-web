@@ -14,7 +14,7 @@ export class Cards {
   private readonly cardsSvc = inject(CardsService);
   name = signal('');
   debouncedName = debounced(this.name, 300);
-  filters = signal<CardFilter>({ set: '', colors: [], rarity: [] });
+  filters = signal<CardFilter>({ set: '', colors: [], rarity: [], pageSize: 50 });
   onFilterApply(f: CardFilter) {
     this.filters.set(f);
   }
@@ -28,7 +28,7 @@ export class Cards {
           set: filters.set,
           colors: filters.colors,
           rarity: filters.rarity,
-          pageSize: 50,
+          pageSize: filters.pageSize,
         })
       ).cards;
     },

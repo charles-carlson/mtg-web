@@ -85,6 +85,23 @@
         </ul>
       </div>
     </fieldset>
+    <fieldset class="cd-filter-block">
+      <legend>Page Size</legend>
+      <ul class="cd-filter-content list cd-page-list">
+        @for (p of pageSizes; track p) {
+        <li>
+          <input
+            type="radio"
+            name="pageSize"
+            [id]="'pageSize-'+p"
+            [checked]="selectedPageSize() === p"
+            (change)="selectPageSize(p)"
+          />
+          <label [for]="'pageSize-' + p">{{ p }}</label>
+        </li>
+        }
+      </ul>
+    </fieldset>
 
     <footer class="cd-filter-footer">
       <button type="button" (click)="clearAll()">Clear all</button>

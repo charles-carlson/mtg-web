@@ -17,7 +17,10 @@
   text-transform: uppercase;
   font-size: 1.3rem;
   cursor: pointer;
-  transition: background 0.2s, box-shadow 0.2s, border-color 0.2s;
+  transition:
+    background 0.2s,
+    box-shadow 0.2s,
+    border-color 0.2s;
 }
 .cd-filter-trigger:hover {
   background: color-mix(in srgb, var(--cd-primary) 26%, transparent);
@@ -55,13 +58,17 @@ dialog.cd-filter {
   border-radius: var(--cd-radius-lg);
   background: var(--cd-surface-warm);
   color: var(--cd-text);
-  box-shadow: 0 16px 44px rgb(0 0 0 / 0.55),
+  box-shadow:
+    0 16px 44px rgb(0 0 0 / 0.55),
     0 0 24px color-mix(in srgb, var(--cd-primary) 22%, transparent); /* neon-tinted */
   overflow: hidden; /* inner <form> scrolls; also clips corners to the radius */
 
   /* slide-in / slide-out */
   translate: 0 0;
-  transition: translate 0.3s ease, display 0.3s allow-discrete, overlay 0.3s allow-discrete;
+  transition:
+    translate 0.3s ease,
+    display 0.3s allow-discrete,
+    overlay 0.3s allow-discrete;
 }
 
 /* off-screen when closed (110% clears the right-edge margin)... */
@@ -130,7 +137,9 @@ dialog.cd-filter form {
   letter-spacing: 0.06em;
   cursor: pointer;
   opacity: 0.85;
-  transition: opacity 0.2s, text-shadow 0.2s;
+  transition:
+    opacity 0.2s,
+    text-shadow 0.2s;
 }
 .cd-close:hover {
   opacity: 1;
@@ -203,7 +212,10 @@ dialog.cd-filter form {
   flex-shrink: 0;
   display: grid;
   place-content: center;
-  transition: background 0.15s, border-color 0.15s, box-shadow 0.15s;
+  transition:
+    background 0.15s,
+    border-color 0.15s,
+    box-shadow 0.15s;
 }
 .cd-filter-block input[type='checkbox']::before {
   content: '';
@@ -257,7 +269,10 @@ dialog.cd-filter form {
 .cd-filter-block input[type='search']::-webkit-search-cancel-button {
   display: none;
 }
-
+.cd-page-list {
+  max-height: 34vh;
+  overflow-y: auto;
+}
 .cd-set-list {
   max-height: 34vh;
   overflow-y: auto;
@@ -290,7 +305,11 @@ dialog.cd-filter form {
   text-transform: uppercase;
   letter-spacing: 0.06em;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    border-color 0.2s,
+    box-shadow 0.2s;
 }
 /* Clear all = secondary / ghost */
 .cd-filter-footer button:first-child {
