@@ -1,0 +1,22 @@
+.ring {
+  width: 120px; /* aspect-ratio needs one concrete dimension or the ring collapses */
+  aspect-ratio: 1;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: conic-gradient(
+    var(--cd-accent) calc(var(--pct) * 1%),
+    color-mix(in srgb, var(--cd-on-bg) 15%, transparent) 0
+  );
+}
+.ring-hole {
+  width: 74%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--cd-bg);
+  display: grid;
+  place-items: center;
+}
+.set-icon {
+  filter: brightness(0) invert(1);
+} /* black SVG → white; visible on dark bg */

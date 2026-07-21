@@ -9,4 +9,6 @@ import type { Card } from '../gen/cards_pb';
 })
 export class CardItem {
   readonly card = input.required<Card>();
+  // when true, the image preloads eagerly (for above-the-fold / LCP images)
+  readonly priority = input(false);
 }

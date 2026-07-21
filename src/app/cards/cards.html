@@ -31,7 +31,7 @@
     <p class="grid-status grid-loading">Loading…</p>
     } @else { @if(cardsResource.hasValue()){ @for (c of cardsResource.value() ?? []; track c.name +
     c.set + c.number) {
-    <app-card-item [card]="c" />
+    <app-card-item [card]="c" [priority]="$index < 6" />
     } } }
   </div>
 </section>
