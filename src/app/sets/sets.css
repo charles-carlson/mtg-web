@@ -1,0 +1,14 @@
+.sets-page {
+  padding: 2rem;
+  font-family: var(--cd-font-mono);
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.sets-grid {
+  display: grid;
+  /*"Make as many columns as fit, each no smaller than 180px,
+  and share any extra space equally so they stretch to fill the row."*/
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.5rem;
+}

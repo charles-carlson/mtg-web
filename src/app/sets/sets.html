@@ -1,5 +1,5 @@
 <section class="sets-page">
-  <div class="sets-container">
+  <div class="sets-grid">
     @for (set of setResource.value() ?? []; track set.set) {
     <app-set-item [set]="set" />
     }
