@@ -2,7 +2,16 @@
   <figure class="dist-bar">
     <figcaption>{{ title() }}</figcaption>
     @for (bar of bars(); track bar.label) {
-    <div class="row" tabindex="0" [attr.aria-label]="bar.label + ': ' + bar.value">
+    <div
+      class="row"
+      [class.clickable]="clickable()"
+      tabindex="0"
+      [attr.role]="clickable() ? 'button' : null"
+      [attr.aria-label]="bar.label + ': ' + bar.value"
+      (click)="clickable() && barClick.emit(bar)"
+      (keydown.enter)="clickable() && barClick.emit(bar)"
+      (keydown.space)="clickable() && $event.preventDefault(); clickable() && barClick.emit(bar)"
+    >
       <span class="label">{{ bar.label }}</span>
       <div class="track">
         <div

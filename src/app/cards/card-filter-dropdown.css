@@ -188,7 +188,9 @@ dialog.cd-filter form {
 .list li:last-of-type {
   margin-bottom: 0;
 }
-
+.cd-filter-block legend {
+  display: contents;
+}
 /* radios (set list) stay circular, neon accent */
 .cd-filter-block input[type='radio'] {
   width: 16px;
@@ -242,6 +244,9 @@ dialog.cd-filter form {
   font-size: 0.95rem;
   cursor: pointer;
   user-select: none;
+}
+.cd-filter-content {
+  padding-top: 5px;
 }
 
 /* Set search + scrollable list */
