@@ -1,0 +1,29 @@
+<section class="stats-page">
+  @if (setResource.value(); as statData) {
+  <app-stat-tile [total]="statData.totalNetWorth" />
+  <div class="card-grid">
+    @for (c of statData.topKCards ?? []; track c.name + c.set + c.number) {
+    <app-card-item [card]="c" [priority]="$index < 6" />
+    }
+  </div>
+  <div class="chart-grid">
+    <app-distribution-chart title="Rarity" [bars]="rarityBars()" />
+    <app-distribution-chart title="Color" [bars]="colorBars()" [showLegend]="true" />
+    <app-distribution-chart
+      title="Type"
+      [bars]="typeBars()"
+      [clickable]="true"
+      (barClick)="onTypeClick($event)"
+    />
+    @if(selectedType()){
+    <app-distribution-chart
+      class="subtype-detail"
+      [title]="selectedType()!"
+      [bars]="subtypeBars()"
+    />
+    }
+  </div>
+  } @else {
+  <p>Loading Stat data...</p>
+  }
+</section>

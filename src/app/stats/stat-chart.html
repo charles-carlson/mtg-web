@@ -1,0 +1,18 @@
+<section>
+  <figure class="dist-bar">
+    <figcaption>{{ title() }}</figcaption>
+    @for (bar of bars(); track bar.label) {
+    <div class="row" tabindex="0" [attr.aria-label]="bar.label + ': ' + bar.value">
+      <span class="label">{{ bar.label }}</span>
+      <div class="track">
+        <div
+          class="fill"
+          [style.width.%]="pct(bar.value)"
+          [style.background]="'var(--' + bar.color + ')'"
+        ></div>
+      </div>
+      <span class="tooltip">{{ bar.value }}</span>
+    </div>
+    }
+  </figure>
+</section>

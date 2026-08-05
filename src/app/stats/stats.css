@@ -1,0 +1,26 @@
+.stats-page {
+  padding: 2rem;
+  font-family: var(--cd-font-mono);
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.card-grid {
+  display: grid;
+  /* fixed max width (220px, not 1fr) + justify-content so a partial row of
+     top cards centers instead of stretching/hugging the left edge */
+  grid-template-columns: repeat(auto-fit, minmax(180px, 220px));
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+.chart-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  align-items: start; /* charts have different bar counts (4 rarity vs 6 color vs N type) —
+                          without this, grid stretches every card to the tallest one's height */
+}
+.chart-grid .subtype-detail {
+  grid-column: 1 / -1;
+}

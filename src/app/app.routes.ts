@@ -10,4 +10,8 @@ export const routes: Routes = [
     path: 'sets',
     loadComponent: () => import('./sets/sets').then((m) => m.Sets),
   },
+  {
+    path: 'stats',
+    loadComponent: () => import('./stats/stats').then((m) => m.Stats),
+  },
 ];

@@ -10,7 +10,108 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file cards.proto.
  */
 export const file_cards: GenFile = /*@__PURE__*/
-  fileDesc("CgtjYXJkcy5wcm90bxIFY2FyZHMiUwoGUHJpY2VzEgsKA3VzZBgBIAEoCRIQCgh1c2RfZm9pbBgCIAEoCRILCgNldXIYAyABKAkSEAoIZXVyX2ZvaWwYBCABKAkSCwoDdGl4GAUgASgJIpIBCgRDYXJkEgwKBG5hbWUYASABKAkSCwoDc2V0GAIgASgJEg4KBm51bWJlchgDIAEoCRINCgVjb3VudBgEIAEoBRIRCglpbWFnZV91cmwYBSABKAkSHQoGcHJpY2VzGAYgASgLMg0uY2FyZHMuUHJpY2VzEg4KBmNvbG9ycxgHIAMoCRIOCgZyYXJpdHkYCCABKAkiTQoNU2V0Q29tcGxldGlvbhIRCglpbWFnZV91cmkYASABKAkSCwoDc2V0GAIgASgJEg0KBW93bmVkGAMgASgFEg0KBXRvdGFsGAQgASgFIhMKEUdldFNldEluZm9SZXF1ZXN0IjgKEkdldFNldEluZm9SZXNwb25zZRIiCgRzZXRzGAEgAygLMhQuY2FyZHMuU2V0Q29tcGxldGlvbiI7Cg5HZXRDYXJkUmVxdWVzdBIMCgRuYW1lGAEgASgJEgsKA3NldBgCIAEoCRIOCgZudW1iZXIYAyABKAkiLAoPR2V0Q2FyZFJlc3BvbnNlEhkKBGNhcmQYASABKAsyCy5jYXJkcy5DYXJkInYKElNlYXJjaENhcmRzUmVxdWVzdBIMCgRuYW1lGAEgASgJEgsKA3NldBgCIAEoCRIOCgZjb2xvcnMYAyADKAkSEQoJcGFnZV9zaXplGAQgASgFEhIKCnBhZ2VfdG9rZW4YBSABKAkSDgoGcmFyaXR5GAYgAygJIkoKE1NlYXJjaENhcmRzUmVzcG9uc2USGgoFY2FyZHMYASADKAsyCy5jYXJkcy5DYXJkEhcKD25leHRfcGFnZV90b2tlbhgCIAEoCSI5ChBMaXN0Q2FyZHNSZXF1ZXN0EhEKCXBhZ2Vfc2l6ZRgBIAEoBRISCgpwYWdlX3Rva2VuGAIgASgJIkgKEUxpc3RDYXJkc1Jlc3BvbnNlEhoKBWNhcmRzGAEgAygLMgsuY2FyZHMuQ2FyZBIXCg9uZXh0X3BhZ2VfdG9rZW4YAiABKAkiEQoPTGlzdFNldHNSZXF1ZXN0IiAKEExpc3RTZXRzUmVzcG9uc2USDAoEc2V0cxgBIAMoCTLSAgoGTVRHUlBDEjoKB0dldENhcmQSFS5jYXJkcy5HZXRDYXJkUmVxdWVzdBoWLmNhcmRzLkdldENhcmRSZXNwb25zZSIAEkYKC1NlYXJjaENhcmRzEhkuY2FyZHMuU2VhcmNoQ2FyZHNSZXF1ZXN0GhouY2FyZHMuU2VhcmNoQ2FyZHNSZXNwb25zZSIAEkAKCUxpc3RDYXJkcxIXLmNhcmRzLkxpc3RDYXJkc1JlcXVlc3QaGC5jYXJkcy5MaXN0Q2FyZHNSZXNwb25zZSIAEj0KCExpc3RTZXRzEhYuY2FyZHMuTGlzdFNldHNSZXF1ZXN0GhcuY2FyZHMuTGlzdFNldHNSZXNwb25zZSIAEkMKCkdldFNldEluZm8SGC5jYXJkcy5HZXRTZXRJbmZvUmVxdWVzdBoZLmNhcmRzLkdldFNldEluZm9SZXNwb25zZSIAQhVaE2JhY2tlbmRfbm9uc2Vuc2UvcGJiBnByb3RvMw");
+  fileDesc("CgtjYXJkcy5wcm90bxIFY2FyZHMibgoRQ29sb3JEaXN0cmlidXRpb24SDQoFd2hpdGUYASABKAUSDAoEYmx1ZRgCIAEoBRILCgNyZWQYAyABKAUSDQoFZ3JlZW4YBCABKAUSDQoFYmxhY2sYBSABKAUSEQoJY29sb3JsZXNzGAYgASgFInQKElJhcml0eURpc3RyaWJ1dGlvbhIOCgZjb21tb24YASABKAUSEAoIdW5jb21tb24YAiABKAUSDAoEcmFyZRgDIAEoBRIOCgZteXRoaWMYBCABKAUSDwoHc3BlY2lhbBgFIAEoBRINCgVib251cxgGIAEoBSJ8ChNTdWJUeXBlRGlzdHJpYnV0aW9uEjYKBmNvdW50cxgBIAMoCzImLmNhcmRzLlN1YlR5cGVEaXN0cmlidXRpb24uQ291bnRzRW50cnkaLQoLQ291bnRzRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgFOgI4ASJTCgZQcmljZXMSCwoDdXNkGAEgASgJEhAKCHVzZF9mb2lsGAIgASgJEgsKA2V1chgDIAEoCRIQCghldXJfZm9pbBgEIAEoCRILCgN0aXgYBSABKAkitQEKBENhcmQSDAoEbmFtZRgBIAEoCRILCgNzZXQYAiABKAkSDgoGbnVtYmVyGAMgASgJEg0KBWNvdW50GAQgASgFEhEKCWltYWdlX3VybBgFIAEoCRIdCgZwcmljZXMYBiABKAsyDS5jYXJkcy5QcmljZXMSDgoGY29sb3JzGAcgAygJEg4KBnJhcml0eRgIIAEoCRIOCgZmaW5pc2gYCSABKAkSEQoJdHlwZV9saW5lGAogASgJIk0KDVNldENvbXBsZXRpb24SEQoJaW1hZ2VfdXJpGAEgASgJEgsKA3NldBgCIAEoCRINCgVvd25lZBgDIAEoBRINCgV0b3RhbBgEIAEoBSITChFHZXRTZXRJbmZvUmVxdWVzdCI4ChJHZXRTZXRJbmZvUmVzcG9uc2USIgoEc2V0cxgBIAMoCzIULmNhcmRzLlNldENvbXBsZXRpb24iOwoOR2V0Q2FyZFJlcXVlc3QSDAoEbmFtZRgBIAEoCRILCgNzZXQYAiABKAkSDgoGbnVtYmVyGAMgASgJIiwKD0dldENhcmRSZXNwb25zZRIZCgRjYXJkGAEgASgLMgsuY2FyZHMuQ2FyZCJ2ChJTZWFyY2hDYXJkc1JlcXVlc3QSDAoEbmFtZRgBIAEoCRILCgNzZXQYAiABKAkSDgoGY29sb3JzGAMgAygJEhEKCXBhZ2Vfc2l6ZRgEIAEoBRISCgpwYWdlX3Rva2VuGAUgASgJEg4KBnJhcml0eRgGIAMoCSJKChNTZWFyY2hDYXJkc1Jlc3BvbnNlEhoKBWNhcmRzGAEgAygLMgsuY2FyZHMuQ2FyZBIXCg9uZXh0X3BhZ2VfdG9rZW4YAiABKAkiOQoQTGlzdENhcmRzUmVxdWVzdBIRCglwYWdlX3NpemUYASABKAUSEgoKcGFnZV90b2tlbhgCIAEoCSJIChFMaXN0Q2FyZHNSZXNwb25zZRIaCgVjYXJkcxgBIAMoCzILLmNhcmRzLkNhcmQSFwoPbmV4dF9wYWdlX3Rva2VuGAIgASgJIhEKD0xpc3RTZXRzUmVxdWVzdCIgChBMaXN0U2V0c1Jlc3BvbnNlEgwKBHNldHMYASADKAkiFAoSR2V0U3RhdEluZm9SZXF1ZXN0Iq8DChNHZXRTdGF0SW5mb1Jlc3BvbnNlEhcKD3RvdGFsX25ldF93b3J0aBgBIAEoARIgCgt0b3Bfa19jYXJkcxgCIAMoCzILLmNhcmRzLkNhcmQSLgoLcmFyaXR5X2Rpc3QYAyABKAsyGS5jYXJkcy5SYXJpdHlEaXN0cmlidXRpb24SLAoKY29sb3JfZGlzdBgEIAEoCzIYLmNhcmRzLkNvbG9yRGlzdHJpYnV0aW9uEjsKCXR5cGVfZGlzdBgFIAMoCzIoLmNhcmRzLkdldFN0YXRJbmZvUmVzcG9uc2UuVHlwZURpc3RFbnRyeRJBCgxzdWJ0eXBlX2Rpc3QYBiADKAsyKy5jYXJkcy5HZXRTdGF0SW5mb1Jlc3BvbnNlLlN1YnR5cGVEaXN0RW50cnkaLwoNVHlwZURpc3RFbnRyeRILCgNrZXkYASABKAkSDQoFdmFsdWUYAiABKAU6AjgBGk4KEFN1YnR5cGVEaXN0RW50cnkSCwoDa2V5GAEgASgJEikKBXZhbHVlGAIgASgLMhouY2FyZHMuU3ViVHlwZURpc3RyaWJ1dGlvbjoCOAEymgMKBk1UR1JQQxI6CgdHZXRDYXJkEhUuY2FyZHMuR2V0Q2FyZFJlcXVlc3QaFi5jYXJkcy5HZXRDYXJkUmVzcG9uc2UiABJGCgtTZWFyY2hDYXJkcxIZLmNhcmRzLlNlYXJjaENhcmRzUmVxdWVzdBoaLmNhcmRzLlNlYXJjaENhcmRzUmVzcG9uc2UiABJACglMaXN0Q2FyZHMSFy5jYXJkcy5MaXN0Q2FyZHNSZXF1ZXN0GhguY2FyZHMuTGlzdENhcmRzUmVzcG9uc2UiABI9CghMaXN0U2V0cxIWLmNhcmRzLkxpc3RTZXRzUmVxdWVzdBoXLmNhcmRzLkxpc3RTZXRzUmVzcG9uc2UiABJDCgpHZXRTZXRJbmZvEhguY2FyZHMuR2V0U2V0SW5mb1JlcXVlc3QaGS5jYXJkcy5HZXRTZXRJbmZvUmVzcG9uc2UiABJGCgtHZXRTdGF0SW5mbxIZLmNhcmRzLkdldFN0YXRJbmZvUmVxdWVzdBoaLmNhcmRzLkdldFN0YXRJbmZvUmVzcG9uc2UiAEIVWhNiYWNrZW5kX25vbnNlbnNlL3BiYgZwcm90bzM");
+
+/**
+ * @generated from message cards.ColorDistribution
+ */
+export type ColorDistribution = Message<"cards.ColorDistribution"> & {
+  /**
+   * @generated from field: int32 white = 1;
+   */
+  white: number;
+
+  /**
+   * @generated from field: int32 blue = 2;
+   */
+  blue: number;
+
+  /**
+   * @generated from field: int32 red = 3;
+   */
+  red: number;
+
+  /**
+   * @generated from field: int32 green = 4;
+   */
+  green: number;
+
+  /**
+   * @generated from field: int32 black = 5;
+   */
+  black: number;
+
+  /**
+   * @generated from field: int32 colorless = 6;
+   */
+  colorless: number;
+};
+
+/**
+ * Describes the message cards.ColorDistribution.
+ * Use `create(ColorDistributionSchema)` to create a new message.
+ */
+export const ColorDistributionSchema: GenMessage<ColorDistribution> = /*@__PURE__*/
+  messageDesc(file_cards, 0);
+
+/**
+ * @generated from message cards.RarityDistribution
+ */
+export type RarityDistribution = Message<"cards.RarityDistribution"> & {
+  /**
+   * @generated from field: int32 common = 1;
+   */
+  common: number;
+
+  /**
+   * @generated from field: int32 uncommon = 2;
+   */
+  uncommon: number;
+
+  /**
+   * @generated from field: int32 rare = 3;
+   */
+  rare: number;
+
+  /**
+   * @generated from field: int32 mythic = 4;
+   */
+  mythic: number;
+
+  /**
+   * @generated from field: int32 special = 5;
+   */
+  special: number;
+
+  /**
+   * @generated from field: int32 bonus = 6;
+   */
+  bonus: number;
+};
+
+/**
+ * Describes the message cards.RarityDistribution.
+ * Use `create(RarityDistributionSchema)` to create a new message.
+ */
+export const RarityDistributionSchema: GenMessage<RarityDistribution> = /*@__PURE__*/
+  messageDesc(file_cards, 1);
+
+/**
+ * @generated from message cards.SubTypeDistribution
+ */
+export type SubTypeDistribution = Message<"cards.SubTypeDistribution"> & {
+  /**
+   * @generated from field: map<string, int32> counts = 1;
+   */
+  counts: { [key: string]: number };
+};
+
+/**
+ * Describes the message cards.SubTypeDistribution.
+ * Use `create(SubTypeDistributionSchema)` to create a new message.
+ */
+export const SubTypeDistributionSchema: GenMessage<SubTypeDistribution> = /*@__PURE__*/
+  messageDesc(file_cards, 2);
 
 /**
  * Prices message
@@ -49,7 +150,7 @@ export type Prices = Message<"cards.Prices"> & {
  * Use `create(PricesSchema)` to create a new message.
  */
 export const PricesSchema: GenMessage<Prices> = /*@__PURE__*/
-  messageDesc(file_cards, 0);
+  messageDesc(file_cards, 3);
 
 /**
  * Shared card message
@@ -96,6 +197,16 @@ export type Card = Message<"cards.Card"> & {
    * @generated from field: string rarity = 8;
    */
   rarity: string;
+
+  /**
+   * @generated from field: string finish = 9;
+   */
+  finish: string;
+
+  /**
+   * @generated from field: string type_line = 10;
+   */
+  typeLine: string;
 };
 
 /**
@@ -103,7 +214,7 @@ export type Card = Message<"cards.Card"> & {
  * Use `create(CardSchema)` to create a new message.
  */
 export const CardSchema: GenMessage<Card> = /*@__PURE__*/
-  messageDesc(file_cards, 1);
+  messageDesc(file_cards, 4);
 
 /**
  * @generated from message cards.SetCompletion
@@ -135,7 +246,7 @@ export type SetCompletion = Message<"cards.SetCompletion"> & {
  * Use `create(SetCompletionSchema)` to create a new message.
  */
 export const SetCompletionSchema: GenMessage<SetCompletion> = /*@__PURE__*/
-  messageDesc(file_cards, 2);
+  messageDesc(file_cards, 5);
 
 /**
  * @generated from message cards.GetSetInfoRequest
@@ -148,7 +259,7 @@ export type GetSetInfoRequest = Message<"cards.GetSetInfoRequest"> & {
  * Use `create(GetSetInfoRequestSchema)` to create a new message.
  */
 export const GetSetInfoRequestSchema: GenMessage<GetSetInfoRequest> = /*@__PURE__*/
-  messageDesc(file_cards, 3);
+  messageDesc(file_cards, 6);
 
 /**
  * @generated from message cards.GetSetInfoResponse
@@ -165,7 +276,7 @@ export type GetSetInfoResponse = Message<"cards.GetSetInfoResponse"> & {
  * Use `create(GetSetInfoResponseSchema)` to create a new message.
  */
 export const GetSetInfoResponseSchema: GenMessage<GetSetInfoResponse> = /*@__PURE__*/
-  messageDesc(file_cards, 4);
+  messageDesc(file_cards, 7);
 
 /**
  * GetCard — exact lookup by name + set + number
@@ -194,7 +305,7 @@ export type GetCardRequest = Message<"cards.GetCardRequest"> & {
  * Use `create(GetCardRequestSchema)` to create a new message.
  */
 export const GetCardRequestSchema: GenMessage<GetCardRequest> = /*@__PURE__*/
-  messageDesc(file_cards, 5);
+  messageDesc(file_cards, 8);
 
 /**
  * @generated from message cards.GetCardResponse
@@ -211,7 +322,7 @@ export type GetCardResponse = Message<"cards.GetCardResponse"> & {
  * Use `create(GetCardResponseSchema)` to create a new message.
  */
 export const GetCardResponseSchema: GenMessage<GetCardResponse> = /*@__PURE__*/
-  messageDesc(file_cards, 6);
+  messageDesc(file_cards, 9);
 
 /**
  * SearchCards — flexible filter, all fields optional
@@ -257,7 +368,7 @@ export type SearchCardsRequest = Message<"cards.SearchCardsRequest"> & {
  * Use `create(SearchCardsRequestSchema)` to create a new message.
  */
 export const SearchCardsRequestSchema: GenMessage<SearchCardsRequest> = /*@__PURE__*/
-  messageDesc(file_cards, 7);
+  messageDesc(file_cards, 10);
 
 /**
  * @generated from message cards.SearchCardsResponse
@@ -279,7 +390,7 @@ export type SearchCardsResponse = Message<"cards.SearchCardsResponse"> & {
  * Use `create(SearchCardsResponseSchema)` to create a new message.
  */
 export const SearchCardsResponseSchema: GenMessage<SearchCardsResponse> = /*@__PURE__*/
-  messageDesc(file_cards, 8);
+  messageDesc(file_cards, 11);
 
 /**
  * ListCards — full collection with optional pagination
@@ -303,7 +414,7 @@ export type ListCardsRequest = Message<"cards.ListCardsRequest"> & {
  * Use `create(ListCardsRequestSchema)` to create a new message.
  */
 export const ListCardsRequestSchema: GenMessage<ListCardsRequest> = /*@__PURE__*/
-  messageDesc(file_cards, 9);
+  messageDesc(file_cards, 12);
 
 /**
  * @generated from message cards.ListCardsResponse
@@ -325,7 +436,7 @@ export type ListCardsResponse = Message<"cards.ListCardsResponse"> & {
  * Use `create(ListCardsResponseSchema)` to create a new message.
  */
 export const ListCardsResponseSchema: GenMessage<ListCardsResponse> = /*@__PURE__*/
-  messageDesc(file_cards, 10);
+  messageDesc(file_cards, 13);
 
 /**
  * @generated from message cards.ListSetsRequest
@@ -338,7 +449,7 @@ export type ListSetsRequest = Message<"cards.ListSetsRequest"> & {
  * Use `create(ListSetsRequestSchema)` to create a new message.
  */
 export const ListSetsRequestSchema: GenMessage<ListSetsRequest> = /*@__PURE__*/
-  messageDesc(file_cards, 11);
+  messageDesc(file_cards, 14);
 
 /**
  * @generated from message cards.ListSetsResponse
@@ -355,7 +466,62 @@ export type ListSetsResponse = Message<"cards.ListSetsResponse"> & {
  * Use `create(ListSetsResponseSchema)` to create a new message.
  */
 export const ListSetsResponseSchema: GenMessage<ListSetsResponse> = /*@__PURE__*/
-  messageDesc(file_cards, 12);
+  messageDesc(file_cards, 15);
+
+/**
+ * @generated from message cards.GetStatInfoRequest
+ */
+export type GetStatInfoRequest = Message<"cards.GetStatInfoRequest"> & {
+};
+
+/**
+ * Describes the message cards.GetStatInfoRequest.
+ * Use `create(GetStatInfoRequestSchema)` to create a new message.
+ */
+export const GetStatInfoRequestSchema: GenMessage<GetStatInfoRequest> = /*@__PURE__*/
+  messageDesc(file_cards, 16);
+
+/**
+ * @generated from message cards.GetStatInfoResponse
+ */
+export type GetStatInfoResponse = Message<"cards.GetStatInfoResponse"> & {
+  /**
+   * @generated from field: double total_net_worth = 1;
+   */
+  totalNetWorth: number;
+
+  /**
+   * @generated from field: repeated cards.Card top_k_cards = 2;
+   */
+  topKCards: Card[];
+
+  /**
+   * @generated from field: cards.RarityDistribution rarity_dist = 3;
+   */
+  rarityDist?: RarityDistribution | undefined;
+
+  /**
+   * @generated from field: cards.ColorDistribution color_dist = 4;
+   */
+  colorDist?: ColorDistribution | undefined;
+
+  /**
+   * @generated from field: map<string, int32> type_dist = 5;
+   */
+  typeDist: { [key: string]: number };
+
+  /**
+   * @generated from field: map<string, cards.SubTypeDistribution> subtype_dist = 6;
+   */
+  subtypeDist: { [key: string]: SubTypeDistribution };
+};
+
+/**
+ * Describes the message cards.GetStatInfoResponse.
+ * Use `create(GetStatInfoResponseSchema)` to create a new message.
+ */
+export const GetStatInfoResponseSchema: GenMessage<GetStatInfoResponse> = /*@__PURE__*/
+  messageDesc(file_cards, 17);
 
 /**
  * @generated from service cards.MTGRPC
@@ -400,6 +566,14 @@ export const MTGRPC: GenService<{
     methodKind: "unary";
     input: typeof GetSetInfoRequestSchema;
     output: typeof GetSetInfoResponseSchema;
+  },
+  /**
+   * @generated from rpc cards.MTGRPC.GetStatInfo
+   */
+  getStatInfo: {
+    methodKind: "unary";
+    input: typeof GetStatInfoRequestSchema;
+    output: typeof GetStatInfoResponseSchema;
   },
 }> = /*@__PURE__*/
   serviceDesc(file_cards, 0);

@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "proto:generate": "buf generate \"${PROTO_SRC:?set PROTO_SRC to your .proto directory}\""
+    "proto:generate": "buf generate \"${PROTO_SRC:?set PROTO_SRC to your .proto directory}\"",
+    "check:proto-sync": "node scripts/check-proto-sync.mjs"
   },
   "private": true,
   "packageManager": "npm@11.16.0",

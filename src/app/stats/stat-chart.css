@@ -1,0 +1,90 @@
+/* distribution-chart.css */
+.dist-bar {
+  /* color_dist — 6-way identity. Slot order is fixed for CVD separation (validated
+     against --cd-surface), not for matching each color's literal MTG identity. */
+  --hue-1: #0080ff; /* white */
+  --hue-2: #ff006e; /* blue */
+  --hue-3: #009e9e; /* black */
+  --hue-4: #7552d7; /* red */
+  --hue-5: #ad9200; /* green */
+  --hue-6: var(--cd-muted); /* colorless — de-emphasis gray, not a categorical hue */
+
+  /* rarity_dist — ordinal ramp, one hue. Brighter = rarer: on a dark surface the
+     dark end is what risks disappearing, so mythic glows instead of going darkest. */
+  --rarity-1: #004d99; /* common */
+  --rarity-2: #0068cc; /* uncommon */
+  --rarity-3: #338cff; /* rare */
+  --rarity-4: #66b2ff; /* mythic */
+
+  /* type_dist — flat single hue, nominal (no gradient needed) */
+  --type-hue: #0080ff;
+
+  display: block;
+  padding: 1.25rem;
+  font-family: var(--cd-font-mono);
+  background: color-mix(in srgb, var(--cd-surface) 55%, transparent);
+  border: 1px solid var(--cd-border);
+  border-radius: var(--cd-radius-lg);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+.dist-bar figcaption {
+  margin: 0 0 1rem;
+  color: var(--cd-text);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2px; /* the surface gap between bars */
+}
+.label {
+  flex: 0 0 88px;
+  overflow: hidden;
+  color: var(--cd-muted);
+  font-size: 0.8rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.track {
+  flex: 1;
+  height: 24px;
+  background: color-mix(in srgb, var(--cd-text) 8%, transparent);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.fill {
+  height: 24px;
+  border-radius: 0 4px 4px 0; /* rounded data-end, square at the baseline */
+  transition: filter 120ms ease;
+}
+
+.row:hover .fill,
+.row:focus-visible .fill {
+  filter: brightness(1.08); /* the hovered mark "lifts" */
+}
+.tooltip {
+  position: absolute;
+  top: -1.75rem;
+  right: 0;
+  padding: 2px 6px;
+  border-radius: var(--cd-radius);
+  border: 1px solid var(--cd-border);
+  font: 0.75rem var(--cd-font-mono);
+  background: var(--cd-surface-warm);
+  color: var(--cd-text);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 120ms ease;
+}
+.row:hover .tooltip,
+.row:focus-visible .tooltip {
+  opacity: 1;
+}
