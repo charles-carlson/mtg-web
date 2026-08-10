@@ -28,7 +28,7 @@ const RARITIES = [
 const PAGESIZES = [25, 50, 75, 100];
 
 export interface CardFilter {
-  set: string;
+  sets: string[];
   colors: string[];
   rarity: string[];
   pageSize: number;
@@ -54,11 +54,11 @@ export class CardFilterDropDown {
   });
   selectedColors = signal<string[]>([]);
   selectedRarities = signal<string[]>([]);
-  selectedSet = signal<string>('');
+  selectedSets = signal<string[]>([]);
   selectedPageSize = signal<number>(50);
   activeCount = computed(
     () =>
-      this.selectedColors().length + this.selectedRarities().length + (this.selectedSet() ? 1 : 0),
+      this.selectedColors().length + this.selectedRarities().length + this.selectedSets().length,
   );
 
   readonly apply = output<CardFilter>();
@@ -83,8 +83,8 @@ export class CardFilterDropDown {
   toggleRarity(r: string) {
     this.toggle(this.selectedRarities, r);
   }
-  selectSet(s: string) {
-    this.selectedSet.set(s);
+  toggleSets(s: string) {
+    this.toggle(this.selectedSets, s);
   }
   selectPageSize(p: number) {
     this.selectedPageSize.set(p);
@@ -93,13 +93,13 @@ export class CardFilterDropDown {
   clearAll() {
     this.selectedColors.set([]);
     this.selectedRarities.set([]);
-    this.selectedSet.set('');
+    this.selectedSets.set([]);
     this.selectedPageSize.set(50);
   }
 
   onApply() {
     this.apply.emit({
-      set: this.selectedSet(),
+      sets: this.selectedSets(),
       colors: this.selectedColors(),
       rarity: this.selectedRarities(),
       pageSize: this.selectedPageSize(),

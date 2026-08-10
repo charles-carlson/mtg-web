@@ -58,24 +58,13 @@
           (input)="query.set(q.value)"
         />
         <ul class="cd-filter-content list cd-set-list">
-          <li>
-            <input
-              type="radio"
-              name="set"
-              id="set-all"
-              [checked]="selectedSet() === ''"
-              (change)="selectSet('')"
-            />
-            <label for="set-all">All sets</label>
-          </li>
           @for (s of filteredSets(); track s) {
           <li>
             <input
-              type="radio"
-              name="set"
+              type="checkbox"
               [id]="'set-' + s"
-              [checked]="selectedSet() === s"
-              (change)="selectSet(s)"
+              [checked]="selectedSets().includes(s)"
+              (change)="toggleSets(s)"
             />
             <label [for]="'set-' + s">{{ s }}</label>
           </li>

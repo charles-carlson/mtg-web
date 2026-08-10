@@ -14,7 +14,7 @@ export class Cards {
   private readonly cardsSvc = inject(CardsService);
   name = signal('');
   debouncedName = debounced(this.name, 300);
-  filters = signal<CardFilter>({ set: '', colors: [], rarity: [], pageSize: 50 });
+  filters = signal<CardFilter>({ sets: [], colors: [], rarity: [], pageSize: 50 });
   onFilterApply(f: CardFilter) {
     this.filters.set(f);
   }
@@ -25,7 +25,7 @@ export class Cards {
       return (
         await this.cardsSvc.searchCards({
           name,
-          set: filters.set,
+          set: filters.sets,
           colors: filters.colors,
           rarity: filters.rarity,
           pageSize: filters.pageSize,
