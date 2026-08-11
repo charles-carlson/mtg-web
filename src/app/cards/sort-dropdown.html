@@ -1,0 +1,44 @@
+<button type="button" class="cd-filter-trigger" (click)="open()" aria-label="Sort" title="Sort">
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden="true"
+  >
+    <line x1="7" y1="20" x2="7" y2="4"></line>
+    <polyline points="3 8 7 4 11 8"></polyline>
+    <line x1="17" y1="4" x2="17" y2="20"></line>
+    <polyline points="13 16 17 20 21 16"></polyline>
+  </svg>
+  Sort
+</button>
+
+<dialog #drawer class="cd-filter">
+  <form>
+    <header class="cd-filter-header">
+      <h3>Sort</h3>
+      <button type="button" class="cd-close" (click)="close()">Close</button>
+    </header>
+
+    <fieldset class="cd-filter-block">
+      <legend>Order by</legend>
+      <ul class="cd-filter-content list">
+        @for (o of options; track o.value) {
+        <li>
+          <input
+            type="radio"
+            name="sortBy"
+            [id]="'sort-' + o.value"
+            [checked]="selected() === o.value"
+            (change)="select(o.value)"
+          />
+          <label [for]="'sort-' + o.value">{{ o.label }}</label>
+        </li>
+        }
+      </ul>
+    </fieldset>
+  </form>
+</dialog>

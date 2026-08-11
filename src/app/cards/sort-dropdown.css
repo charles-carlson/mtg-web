@@ -1,0 +1,185 @@
+/* Sort drawer — same Retro-Futurism panel treatment as the filter drawer. */
+
+/* Trigger button — sized to match the reload/filter buttons in the search row */
+.cd-filter-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.6em 1.2em;
+  border: 1.5px solid var(--cd-border);
+  border-radius: var(--cd-radius);
+  background: color-mix(in srgb, var(--cd-primary) 14%, transparent);
+  color: var(--cd-accent);
+  font: inherit;
+  font-family: var(--cd-font-mono);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    box-shadow 0.2s,
+    border-color 0.2s;
+}
+.cd-filter-trigger svg {
+  width: 1em;
+  height: 1em;
+}
+.cd-filter-trigger:hover {
+  background: color-mix(in srgb, var(--cd-primary) 26%, transparent);
+  border-color: var(--cd-primary);
+  color: #fff;
+  box-shadow: var(--cd-glow-blue);
+}
+.cd-filter-trigger:focus-visible {
+  outline: 2px solid var(--cd-primary);
+  outline-offset: 2px;
+}
+
+/* Dialog as a floating neon panel */
+dialog.cd-filter {
+  margin: 1rem 1rem 1rem auto;
+  max-height: calc(100dvh - 2rem);
+  width: min(280px, 88vw);
+  padding: 0;
+  border: 1px solid var(--cd-border);
+  border-radius: var(--cd-radius-lg);
+  background: var(--cd-surface-warm);
+  color: var(--cd-text);
+  box-shadow:
+    0 16px 44px rgb(0 0 0 / 0.55),
+    0 0 24px color-mix(in srgb, var(--cd-primary) 22%, transparent);
+  overflow: hidden;
+
+  translate: 0 0;
+  transition:
+    translate 0.3s ease,
+    display 0.3s allow-discrete,
+    overlay 0.3s allow-discrete;
+}
+dialog.cd-filter:not([open]) {
+  translate: 110%;
+}
+@starting-style {
+  dialog.cd-filter[open] {
+    translate: 110%;
+  }
+}
+dialog.cd-filter::backdrop {
+  background: color-mix(in srgb, var(--pal-void) 70%, transparent);
+  backdrop-filter: blur(2px);
+  transition: opacity 0.3s allow-discrete;
+}
+
+dialog.cd-filter form {
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100dvh - 2rem);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.cd-filter-header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.5rem 0 1rem;
+  height: 44px;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--cd-primary) 30%, var(--cd-surface)),
+    color-mix(in srgb, var(--cd-secondary) 30%, var(--cd-surface))
+  );
+  border-bottom: 1px solid var(--cd-border);
+  color: #fff;
+}
+.cd-filter-header h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-shadow: 0 0 8px rgb(0 0 0 / 0.4);
+}
+
+.cd-close {
+  height: 44px;
+  padding: 0 0.75rem;
+  border: none;
+  background: transparent;
+  color: #fff;
+  font: inherit;
+  font-family: var(--cd-font-mono);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  opacity: 0.85;
+  transition:
+    opacity 0.2s,
+    text-shadow 0.2s;
+}
+.cd-close:hover {
+  opacity: 1;
+  text-shadow: var(--cd-glow-cyan);
+}
+
+.cd-filter-block {
+  margin: 0;
+  padding: 1rem;
+  border: none;
+}
+.cd-filter-block legend {
+  display: contents;
+}
+.cd-filter-content {
+  padding-top: 5px;
+}
+.cd-filter-block legend {
+  padding: 0;
+  margin-bottom: 0.7em;
+  color: var(--cd-accent);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-shadow: var(--cd-glow-cyan);
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.list li {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  margin-bottom: 0.25em;
+  padding: 0.3rem 0.4rem;
+  border-radius: var(--cd-radius);
+  transition: background 0.15s;
+}
+.list li:hover {
+  background: color-mix(in srgb, var(--cd-primary) 14%, transparent);
+}
+.list li:last-of-type {
+  margin-bottom: 0;
+}
+.cd-filter-block input[type='radio'] {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: var(--cd-accent);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.cd-filter-block label {
+  font-size: 0.95rem;
+  cursor: pointer;
+  user-select: none;
+}

@@ -1,11 +1,6 @@
 <section class="cards-page">
   <div class="search-menu">
-    <button
-      class="reload-btn"
-      (click)="cardsResource.reload()"
-      aria-label="Reload"
-      title="Reload"
-    >
+    <button class="reload-btn" (click)="cardsResource.reload()" aria-label="Reload" title="Reload">
       <svg
         viewBox="0 0 24 24"
         fill="none"
@@ -21,6 +16,7 @@
       </svg>
     </button>
     <app-card-search-bar [(value)]="name" />
+    <app-sort-dropdown [(selected)]="selectedSortBy" />
     <app-card-filter-dropdown (apply)="onFilterApply($event)" />
   </div>
 
