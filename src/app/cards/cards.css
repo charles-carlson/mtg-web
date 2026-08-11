@@ -36,11 +36,9 @@
 }
 .grid-loading {
   color: var(--cd-accent);
-  text-shadow: var(--cd-glow-cyan);
 }
 .grid-error {
   color: var(--cd-secondary);
-  text-shadow: var(--cd-glow-pink);
 }
 
 /* icon-only reload button, sized to match the Filters trigger */
@@ -55,7 +53,7 @@
   background: color-mix(in srgb, var(--cd-primary) 14%, transparent);
   color: var(--cd-accent);
   cursor: pointer;
-  transition: background 0.2s, box-shadow 0.2s, color 0.2s, border-color 0.2s;
+  transition: background 0.12s linear, box-shadow 0.12s linear, color 0.12s linear, border-color 0.12s linear;
 }
 .reload-btn svg {
   display: block;
@@ -65,8 +63,8 @@
 .reload-btn:hover {
   background: color-mix(in srgb, var(--cd-primary) 26%, transparent);
   border-color: var(--cd-primary);
-  color: #fff;
-  box-shadow: var(--cd-glow-blue);
+  color: var(--cd-text);
+  box-shadow: var(--cd-glow-primary);
 }
 .reload-btn:active {
   transform: translateY(1px);

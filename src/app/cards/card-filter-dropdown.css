@@ -18,15 +18,15 @@
   font-size: 1.3rem;
   cursor: pointer;
   transition:
-    background 0.2s,
-    box-shadow 0.2s,
-    border-color 0.2s;
+    background 0.12s linear,
+    box-shadow 0.12s linear,
+    border-color 0.12s linear;
 }
 .cd-filter-trigger:hover {
   background: color-mix(in srgb, var(--cd-primary) 26%, transparent);
   border-color: var(--cd-primary);
-  color: #fff;
-  box-shadow: var(--cd-glow-blue);
+  color: var(--cd-text);
+  box-shadow: var(--cd-glow-primary);
 }
 .cd-filter-trigger:focus-visible {
   outline: 2px solid var(--cd-primary);
@@ -41,11 +41,11 @@
   padding: 0 0.4em;
   border-radius: 999px;
   background: var(--cd-secondary);
-  color: #0a0a14;
+  color: var(--pal-near-black);
   font-size: 1.1rem;
   font-weight: 700;
   line-height: 1;
-  box-shadow: var(--cd-glow-pink);
+  box-shadow: var(--cd-glow-secondary);
 }
 
 /* Dialog as a floating neon panel */
@@ -58,17 +58,15 @@ dialog.cd-filter {
   border-radius: var(--cd-radius-lg);
   background: var(--cd-surface-warm);
   color: var(--cd-text);
-  box-shadow:
-    0 16px 44px rgb(0 0 0 / 0.55),
-    0 0 24px color-mix(in srgb, var(--cd-primary) 22%, transparent); /* neon-tinted */
+  box-shadow: 6px 6px 0 0 var(--pal-hazard-black); /* flat hard sticker shadow, no blur */
   overflow: hidden; /* inner <form> scrolls; also clips corners to the radius */
 
   /* slide-in / slide-out */
   translate: 0 0;
   transition:
-    translate 0.3s ease,
-    display 0.3s allow-discrete,
-    overlay 0.3s allow-discrete;
+    translate 0.18s linear,
+    display 0.18s allow-discrete,
+    overlay 0.18s allow-discrete;
 }
 
 /* off-screen when closed (110% clears the right-edge margin)... */
@@ -84,9 +82,9 @@ dialog.cd-filter:not([open]) {
 
 /* If this doesn't take effect, move to global styles.css — Angular scoping can miss ::backdrop */
 dialog.cd-filter::backdrop {
-  background: color-mix(in srgb, var(--pal-void) 70%, transparent);
+  background: color-mix(in srgb, var(--pal-hazard-black) 70%, transparent);
   backdrop-filter: blur(2px);
-  transition: opacity 0.3s allow-discrete;
+  transition: opacity 0.18s allow-discrete;
 }
 
 /* Form layout: sticky header + footer, scrolling middle */
@@ -107,13 +105,10 @@ dialog.cd-filter form {
   justify-content: space-between;
   padding: 0 0.5rem 0 1rem;
   height: 44px;
-  background: linear-gradient(
-    90deg,
-    color-mix(in srgb, var(--cd-primary) 30%, var(--cd-surface)),
-    color-mix(in srgb, var(--cd-secondary) 30%, var(--cd-surface))
-  );
+  /* hard 50/50 split, not a blend — two flat color blocks meeting at one edge */
+  background: linear-gradient(90deg, var(--cd-primary) 50%, var(--cd-secondary) 50%);
   border-bottom: 1px solid var(--cd-border);
-  color: #fff;
+  color: var(--pal-hazard-black);
 }
 .cd-filter-header h3 {
   margin: 0;
@@ -121,7 +116,7 @@ dialog.cd-filter form {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  text-shadow: 0 0 8px rgb(0 0 0 / 0.4);
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.6);
 }
 
 .cd-close {
@@ -129,7 +124,7 @@ dialog.cd-filter form {
   padding: 0 0.75rem;
   border: none;
   background: transparent;
-  color: #fff;
+  color: var(--pal-hazard-black);
   font: inherit;
   font-family: var(--cd-font-mono);
   font-size: 0.85rem;
@@ -138,12 +133,11 @@ dialog.cd-filter form {
   cursor: pointer;
   opacity: 0.85;
   transition:
-    opacity 0.2s,
-    text-shadow 0.2s;
+    opacity 0.12s linear,
+    text-shadow 0.12s linear;
 }
 .cd-close:hover {
   opacity: 1;
-  text-shadow: var(--cd-glow-cyan);
 }
 
 /* Filter blocks (fieldsets) */
@@ -164,7 +158,6 @@ dialog.cd-filter form {
   font-weight: 700;
   font-size: 0.78rem;
   letter-spacing: 0.08em;
-  text-shadow: var(--cd-glow-cyan);
 }
 
 .list {
@@ -208,30 +201,30 @@ dialog.cd-filter form {
   height: 18px;
   margin: 0;
   border: 1.5px solid var(--cd-border);
-  border-radius: 4px;
-  background: color-mix(in srgb, var(--pal-void) 60%, transparent);
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--pal-hazard-black) 60%, transparent);
   cursor: pointer;
   flex-shrink: 0;
   display: grid;
   place-content: center;
   transition:
-    background 0.15s,
-    border-color 0.15s,
-    box-shadow 0.15s;
+    background 0.12s linear,
+    border-color 0.12s linear,
+    box-shadow 0.12s linear;
 }
 .cd-filter-block input[type='checkbox']::before {
   content: '';
   width: 10px;
   height: 10px;
-  background: #0a0a14;
+  background: var(--pal-near-black);
   clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
   transform: scale(0);
-  transition: transform 0.15s ease;
+  transition: transform 0.12s linear;
 }
 .cd-filter-block input[type='checkbox']:checked {
   background: var(--cd-accent);
   border-color: var(--cd-accent);
-  box-shadow: var(--cd-glow-cyan);
+  box-shadow: var(--cd-glow-accent);
 }
 .cd-filter-block input[type='checkbox']:checked::before {
   transform: scale(1);
@@ -256,7 +249,7 @@ dialog.cd-filter form {
   margin-bottom: 0.7em;
   border: 1.5px solid var(--cd-border);
   border-radius: var(--cd-radius);
-  background: color-mix(in srgb, var(--pal-void) 60%, transparent);
+  background: color-mix(in srgb, var(--pal-hazard-black) 60%, transparent);
   color: var(--cd-text);
   font: inherit;
   font-family: var(--cd-font-mono);
@@ -266,7 +259,7 @@ dialog.cd-filter form {
 .cd-filter-block input[type='search']:focus {
   outline: none;
   border-color: var(--cd-accent);
-  box-shadow: var(--cd-glow-cyan);
+  box-shadow: var(--cd-glow-accent);
 }
 .cd-filter-block input[type='search']::placeholder {
   color: var(--cd-muted);
@@ -311,10 +304,10 @@ dialog.cd-filter form {
   letter-spacing: 0.06em;
   cursor: pointer;
   transition:
-    background 0.2s,
-    color 0.2s,
-    border-color 0.2s,
-    box-shadow 0.2s;
+    background 0.12s linear,
+    color 0.12s linear,
+    border-color 0.12s linear,
+    box-shadow 0.12s linear;
 }
 /* Clear all = secondary / ghost */
 .cd-filter-footer button:first-child {
@@ -325,16 +318,16 @@ dialog.cd-filter form {
 .cd-filter-footer button:first-child:hover {
   border-color: var(--cd-secondary);
   color: var(--cd-secondary);
-  box-shadow: var(--cd-glow-pink);
+  box-shadow: var(--cd-glow-secondary);
 }
 /* Apply = primary */
 .cd-filter-footer button:last-child {
   border: 1.5px solid var(--cd-primary);
   background: color-mix(in srgb, var(--cd-primary) 22%, transparent);
-  color: #fff;
+  color: var(--cd-text);
 }
 .cd-filter-footer button:last-child:hover {
   background: color-mix(in srgb, var(--cd-primary) 38%, transparent);
   border-color: var(--cd-primary);
-  box-shadow: var(--cd-glow-blue);
+  box-shadow: var(--cd-glow-primary);
 }

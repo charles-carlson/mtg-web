@@ -1,23 +1,29 @@
 /* distribution-chart.css */
 .dist-bar {
-  /* color_dist — 6-way identity. Slot order is fixed for CVD separation (validated
-     against --cd-surface), not for matching each color's literal MTG identity. */
-  --hue-1: #0080ff; /* white */
-  --hue-2: #ff006e; /* blue */
-  --hue-3: #009e9e; /* black */
-  --hue-4: #7552d7; /* red */
-  --hue-5: #ad9200; /* green */
+  /* color_dist — Marathon's palette only has 4 vivid hues (acid-green, signal-cyan,
+     blood-orange, compiler-magenta), toned to clear the dark-surface lightness band and
+     validated for CVD separation in this exact order. That's one hue short of the 5
+     colors — Black shares the muted de-emphasis gray with Colorless rather than getting
+     a 5th invented (undocumented) hue. Slot order is fixed for CVD safety, not identity. */
+  --hue-1: #6b8000; /* white  (toned acid-green) */
+  --hue-2: #0095a6; /* blue   (toned signal-cyan) */
+  --hue-3: var(--cd-muted); /* black — de-emphasis gray, not a categorical hue */
+  --hue-4: #ff3d1a; /* red    (blood-orange, as documented) */
+  --hue-5: #e619b8; /* green  (compiler-magenta, as documented) */
   --hue-6: var(--cd-muted); /* colorless — de-emphasis gray, not a categorical hue */
 
-  /* rarity_dist — ordinal ramp, one hue. Brighter = rarer: on a dark surface the
-     dark end is what risks disappearing, so mythic glows instead of going darkest. */
-  --rarity-1: #004d99; /* common */
-  --rarity-2: #0068cc; /* uncommon */
-  --rarity-3: #338cff; /* rare */
-  --rarity-4: #66b2ff; /* mythic */
+  /* rarity_dist — ordinal ramp, one hue (signal-cyan — "HUD readouts" per DESIGN.md).
+     Brighter = rarer: on a dark surface the dark end is what risks disappearing, so
+     mythic glows at full brand-cyan instead of going darkest. */
+  --rarity-1: #005c66; /* common */
+  --rarity-2: #007280; /* uncommon */
+  --rarity-3: #00a0b3; /* rare */
+  --rarity-4: #00e5ff; /* mythic */
 
-  /* type_dist — flat single hue, nominal (no gradient needed) */
-  --type-hue: #0080ff;
+  /* type_dist — flat single hue, nominal (no gradient needed). Full-brightness acid-green
+     is fine here (unlike the categorical set) since it's one flat fill, not part of a
+     multi-hue identity palette that needs L-band balance against neighbors. */
+  --type-hue: #d7ff00;
 
   display: block;
   padding: 1.25rem;
@@ -25,7 +31,7 @@
   background: color-mix(in srgb, var(--cd-surface) 55%, transparent);
   border: 1px solid var(--cd-border);
   border-radius: var(--cd-radius-lg);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+  box-shadow: 4px 4px 0 0 var(--pal-hazard-black); /* flat hard sticker shadow, no blur */
 }
 
 .dist-bar figcaption {
