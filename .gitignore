@@ -39,6 +39,13 @@ testem.log
 /typings
 __screenshots__/
 
+# terraform
+terraform/.terraform/
+terraform/.terraform.lock.hcl
+terraform/terraform.tfstate
+terraform/terraform.tfstate.backup
+terraform/*.tfvars
+
 # System files
 .DS_Store
 Thumbs.db
